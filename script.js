@@ -136,11 +136,13 @@ function initTypingEffect() {
     if (!typingElement) return;
 
     const roles = [
-        'Web Developer',
-        'BBA-CA Graduate',
-        'Frontend Developer',
-        'Creative Designer',
-        'React Developer'
+        'Aspiring UI Designer',
+        'Frontend Enthusiast',
+        'Creative Developer',
+        'Design Explorer',
+        'UI Design Learner',
+        'Web Enthusiast',
+        'Learning & Building'
     ];
 
     let roleIndex = 0;
@@ -307,7 +309,7 @@ function initCopyToClipboard() {
     const contactItems = document.querySelectorAll('.contact-item');
 
     contactItems.forEach(item => {
-        const copyBtn = item.querySelector('.copy-btn');
+        const copyBtn = item.querySelector('.copy-btn, .contact-value');
         if (!copyBtn) return;
 
         copyBtn.addEventListener('click', (e) => {
@@ -416,7 +418,7 @@ function initTerminalTyping() {
     clearTimeout(terminalTypingTimeout);
     commandElement.textContent = '';
 
-    const command = 'contact --list-all';
+    const command = 'connect --creative-designer --portfolio';
     let index = 0;
 
     function typeCommand() {
