@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Showcase | Canva Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 fill=%22%237cf0ff%22 font-family=%22sans-serif%22 font-weight=%22bold%22 font-size=%2250%22>PN</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="canva.css" />
+  </head>
+  <body class="gallery-page">
+    <!-- Particle Background -->
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-bracket"><</span>
+          <span class="logo-text">PN</span>
+          <span class="logo-bracket">/></span>
+        </a>
+        <a href="index.html#projects" class="btn btn-secondary">
+          <i class="fas fa-arrow-left"></i><span>Back to Projects</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="gallery-section">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Creative Portfolio</span>
+          <h2 class="section-title">Canva Design Gallery</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery Items (Using folder 'c') -->
+
+          <!-- 1. Social Media Poster (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox('c/Social Media Poster.jpg', 'Social Media Poster')
+              "
+            >
+              <img
+                src="c/Social Media Poster.jpg"
+                alt="Social Media Poster"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Social Media Poster</h4>
+              <span class="tag">Social Media Creative</span>
+            </div>
+          </div>
+
+          <!-- 2. YouTube Thumbnail (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="openLightbox('c/YT Thumbnail.jpg', 'YouTube Thumbnail')"
+            >
+              <img
+                src="c/YT Thumbnail.jpg"
+                alt="YouTube Thumbnail"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>YouTube Thumbnail</h4>
+              <span class="tag">Content Design</span>
+            </div>
+          </div>
+
+          <!-- 3. Product Advertisement (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/Product Advertisement.jpg',
+                  'Product Advertisement',
+                )
+              "
+            >
+              <img
+                src="c/Product Advertisement.jpg"
+                alt="Product Advertisement"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Product Advertisement</h4>
+              <span class="tag">Ad Creative</span>
+            </div>
+          </div>
+
+          <!-- 4. Flyer Design (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="card-inner"
+              onclick="openLightbox('c/Flyer.png', 'Flyer Design')"
+            >
+              <img src="c/Flyer.png" alt="Flyer Design" loading="lazy" />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Flyer Design</h4>
+              <span class="tag">Marketing Creative</span>
+            </div>
+          </div>
+
+          <!-- 5. Mood Board (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="openLightbox('c/Mood Board.jpg', 'Mood Board')"
+            >
+              <img src="c/Mood Board.jpg" alt="Mood Board" loading="lazy" />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Mood Board</h4>
+              <span class="tag">Creative Direction</span>
+            </div>
+          </div>
+
+          <!-- 6. Brand Guideline Design (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/Brand Guideline Design .jpg',
+                  'Brand Guideline Design',
+                )
+              "
+            >
+              <img
+                src="c/Brand Guideline Design .jpg"
+                alt="Brand Guideline Design"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Brand Guideline Design</h4>
+              <span class="tag">Brand Identity</span>
+            </div>
+          </div>
+
+          <!-- 7. Invitation Card (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-inner"
+              onclick="openLightbox('c/Invitation Card.jpg', 'Invitation Card')"
+            >
+              <img
+                src="c/Invitation Card.jpg"
+                alt="Invitation Card"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Invitation Card</h4>
+              <span class="tag">Visual Design</span>
+            </div>
+          </div>
+
+          <!-- 8. Business Card Design (Multi-Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/v1.png',
+                  'Business Card Design',
+                  'c/v1.png,c/v2.png',
+                )
+              "
+              data-images="c/v1.png,c/v2.png"
+            >
+              <img src="c/v1.png" alt="Business Card Design" loading="lazy" />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 2 Images
+              </div>
+              <div class="card-overlay">
+                <i class="fas fa-images"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Business Card Design</h4>
+              <span class="tag">Brand Identity</span>
+            </div>
+          </div>
+
+          <!-- 9. Menu Design (Multi-Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/Menu1.jpg',
+                  'Menu Design',
+                  'c/Menu1.jpg,c/Menu2.jpg,c/Menu3.jpg',
+                )
+              "
+              data-images="c/Menu1.jpg,c/Menu2.jpg,c/Menu3.jpg"
+            >
+              <img src="c/Menu1.jpg" alt="Menu Design" loading="lazy" />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 3 Images
+              </div>
+              <div class="card-overlay">
+                <i class="fas fa-images"></i>
+                <span>View Gallery</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Menu Design</h4>
+              <span class="tag">Layout Design</span>
+            </div>
+          </div>
+
+          <!-- 10. Magazine Cover (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/Magazine Cover using grid & guidelines.jpg',
+                  'Magazine Cover',
+                )
+              "
+            >
+              <img
+                src="c/Magazine Cover using grid & guidelines.jpg"
+                alt="Magazine Cover"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Magazine Cover</h4>
+              <span class="tag">Editorial Layout</span>
+            </div>
+          </div>
+
+          <!-- 11. Product Packaging (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox('c/Product Packaging.jpg', 'Product Packaging')
+              "
+            >
+              <img
+                src="c/Product Packaging.jpg"
+                alt="Product Packaging"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Product Packaging</h4>
+              <span class="tag">Packaging & Branding</span>
+            </div>
+          </div>
+
+          <!-- 12. Product POV Design (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox('c/Product POV Design.jpg', 'Product POV Design')
+              "
+            >
+              <img
+                src="c/Product POV Design.jpg"
+                alt="Product POV Design"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Product POV Design</h4>
+              <span class="tag">Product Visualization </span>
+            </div>
+          </div>
+
+          <!-- 13. T-shirt Design (Single Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="openLightbox('c/T-shirt Design.jpg', 'T-shirt Design')"
+            >
+              <img
+                src="c/T-shirt Design.jpg"
+                alt="T-shirt Design"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i>
+                <span>View Project</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>T-shirt Design</h4>
+              <span class="tag">Merchandise Design</span>
+            </div>
+          </div>
+
+          <!-- 14. Calendar Design (Multi-Image) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'c/Calendar1.jpg',
+                  'Calendar Design',
+                  'c/Calendar1.jpg,c/Calendar2.jpg,c/Calendar3.jpg,c/Calendar4.jpg,c/Calendar5.jpg,c/Calendar6.jpg,c/Calendar7.jpg,c/Calendar8.jpg,c/Calendar9.jpg,c/Calendar10.jpg,c/Calendar11.jpg,c/Calendar12.jpg',
+                )
+              "
+              data-images="c/Calendar1.jpg,c/Calendar2.jpg,c/Calendar3.jpg,c/Calendar4.jpg,c/Calendar5.jpg,c/Calendar6.jpg,c/Calendar7.jpg,c/Calendar8.jpg,c/Calendar9.jpg,c/Calendar10.jpg,c/Calendar11.jpg,c/Calendar12.jpg"
+            >
+              <img src="c/Calendar1.jpg" alt="Calendar Design" loading="lazy" />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 12 Images
+              </div>
+              <div class="card-overlay">
+                <i class="fas fa-images"></i>
+                <span>View Full Year</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Calendar Design</h4>
+              <span class="tag">Print & Layout</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+
+      <!-- Side Navigation Buttons -->
+      <button
+        class="ctrl-btn nav-side-btn"
+        id="lightbox-prev-btn"
+        onclick="navigateImage(-1)"
+        aria-label="Previous Image"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <button
+        class="ctrl-btn nav-side-btn"
+        id="lightbox-next-btn"
+        onclick="navigateImage(1)"
+        aria-label="Next Image"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="lightbox-controls">
+        <button class="ctrl-btn" onclick="zoomImage(1.2)" aria-label="Zoom In">
+          <i class="fas fa-plus"></i>
+        </button>
+        <button class="ctrl-btn" onclick="zoomImage(0.8)" aria-label="Zoom Out">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button
+          class="ctrl-btn close-btn"
+          onclick="closeLightbox()"
+          aria-label="Close"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="lightbox-content">
+        <div class="image-wrapper" id="image-wrapper">
+          <img id="lightbox-img" src="" alt="Enlarged View" />
+        </div>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <div class="footer-right">
+            <div class="footer-logo">
+              <span class="logo-bracket"><</span>
+              <span class="logo-text">PN</span>
+              <span class="logo-bracket">/></span>
+            </div>
+            <p class="footer-text">
+              Designed & Built with <i class="fas fa-heart"></i> by Pranali
+              Nalavde
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">2026 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+      <svg class="progress-ring" width="50" height="50">
+        <circle
+          class="progress-ring__circle"
+          stroke-width="3"
+          fill="transparent"
+          r="23"
+          cx="25"
+          cy="25"
+        />
+      </svg>
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <!-- Reusing particle logic -->
+    <script src="canva.js"></script>
+
+    <!-- Custom Pixel Ghost Cursor -->
+    <div id="custom-cursor" class="custom-cursor">
+      <div class="ghost-body"></div>
+      <div class="ghost-eyes">
+        <div class="ghost-eye left"></div>
+        <div class="ghost-eye right"></div>
+      </div>
+      <div class="ghost-mouth"></div>
+      <div class="ghost-cheeks">
+        <div class="ghost-cheek left"></div>
+        <div class="ghost-cheek right"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+  </body>
+</html>

@@ -517,7 +517,7 @@ function initCustomCursor() {
     // Interactive elements that change cursor
     const interactiveElements = document.querySelectorAll(
         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
-        '.soft-skill-card, .skill-item, .copy-btn, input, textarea, [role="button"]'
+        '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, .card-inner, input, textarea, [role="button"]'
     );
 
     // Add hover effects

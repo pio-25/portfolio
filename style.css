@@ -103,7 +103,17 @@ body, #particle-canvas, .custom-cursor, .ghost-print, .puff-particle, .loading-s
 }
 
 body:has(#custom-cursor) { cursor: none; }
-body:has(#custom-cursor) a, body:has(#custom-cursor) button, body:has(#custom-cursor) .btn { cursor: none; }
+body:has(#custom-cursor) a, 
+body:has(#custom-cursor) button, 
+body:has(#custom-cursor) .btn,
+body:has(#custom-cursor) .contact-item,
+body:has(#custom-cursor) .mission-card,
+body:has(#custom-cursor) .gallery-card,
+body:has(#custom-cursor) .card-inner,
+body:has(#custom-cursor) .ctrl-btn,
+body:has(#custom-cursor) .copy-btn { 
+  cursor: none !important; 
+}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -492,12 +502,39 @@ img { max-width: 100%; display: block; }
 /* ============================================
    PROJECTS SECTION
    ============================================ */
-.projects-section { padding: var(--section-padding) var(--container-padding); max-width: var(--container-max); margin: 0 auto; }
-.projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
-.mission-card { background: var(--glass-bg); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--glass-shadow); transition: all var(--transition-normal); }
+.projects-section { 
+    padding: var(--section-padding) var(--container-padding); 
+    max-width: var(--container-max); 
+    margin: 0 auto; 
+}
 
-@media screen and (max-width: 480px) {
-  .projects-container { gap: 1.5rem; }
+.projects-container { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: clamp(2rem, 5vw, 3.5rem); 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.mission-card { 
+    background: var(--glass-bg); 
+    -webkit-backdrop-filter: var(--glass-blur); 
+    backdrop-filter: var(--glass-blur); 
+    border: 1px solid var(--glass-border); 
+    border-radius: var(--radius-lg); 
+    overflow: hidden; 
+    box-shadow: var(--glass-shadow); 
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container { 
+        grid-template-columns: 1fr; 
+        max-width: 550px; /* Prevents cards from becoming too wide on mobile */
+    }
 }
 
 
@@ -561,15 +598,29 @@ img { max-width: 100%; display: block; }
     border-color: var(--accent-pink);
     box-shadow: 0 0 25px rgba(255, 158, 170, 0.5);
 }
-.mission-body { padding: 1.5rem; }
+.mission-body { 
+    padding: clamp(1.5rem, 3vw, 2.2rem); 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .mission-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
-.mission-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+.mission-desc { 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+    line-height: 1.6; 
+    margin-bottom: 1.5rem; 
+    flex: 1; /* Pushes content below down to align bottom sections */
+}
 .mission-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 .tech-tag { padding: 0.3rem 0.7rem; background: rgba(124, 240, 255, 0.1); color: var(--accent-cyan); border-radius: 15px; font-size: 0.75rem; font-weight: 500; }
 .mission-features { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
 .feature { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
 .feature i { color: var(--accent-green); font-size: 0.75rem; }
-.mission-actions { margin-top: 1rem; }
+.mission-actions { 
+    margin-top: auto; 
+    padding-top: 1rem;
+}
 .btn-mission { width: 100%; justify-content: center; background: rgba(124, 240, 255, 0.1); color: var(--accent-cyan); border: 1px solid rgba(124, 240, 255, 0.3); padding: 0.75rem; }
 .btn-mission:hover { background: var(--gradient-cyan); color: white; border-color: transparent; transform: translateY(-2px); box-shadow: var(--glow-cyan); }
 
