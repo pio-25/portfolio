@@ -907,16 +907,15 @@ img { max-width: 100%; display: block; }
         cursor: pointer !important;
     }
 
-    /* Allow subtle transforms on touch to maintain visual feedback */
-    .profile-card-3d:active .profile-image,
-    .mission-card:active .mission-image img,
-    .mission-card:active .mission-overlay,
-    .soft-skill-card:active,
-    .skill-item:active,
-    .profile-level:active,
-    .view-btn:active {
-        transform: scale(0.98);
-        transition: transform 0.2s ease;
+    .profile-card-3d:hover .profile-image,
+    .mission-card:hover .mission-image img,
+    .mission-card:hover .mission-overlay,
+    .soft-skill-card:hover,
+    .skill-item:hover,
+    .profile-level:hover,
+    .view-btn:hover {
+        transform: none !important;
+        box-shadow: none !important;
     }
 }
 
