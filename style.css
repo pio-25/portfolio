@@ -130,7 +130,8 @@ img { max-width: 100%; display: block; }
 .loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s ease; }
 .loading-screen.hidden { opacity: 0; visibility: hidden; }
 .loading-container { text-align: center; }
-.loading-logo { font-family: var(--font-display); font-size: 3rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-primary); }
+.loading-logo { display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; }
+.loading-logo img { height: 60px; /* same as navbar logo */ width: auto; display: block; }
 .loading-logo .logo-bracket { color: var(--accent-cyan); }
 .loading-logo .logo-text { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .loading-bar-container { width: 200px; height: 4px; background: var(--bg-secondary); border-radius: 2px; margin: 0 auto 1rem; overflow: hidden; }
