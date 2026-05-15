@@ -1014,3 +1014,16 @@ img { max-width: 100%; display: block; }
         opacity: 0;
     }
 }
+
+/* Global Site Logo Style */
+.site-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+/* Larger logo for navbar and footer */
+.nav-logo .site-logo-img,
+.footer-logo .site-logo-img {
+    height: 55px;
+}
+
