@@ -222,8 +222,8 @@ function initMobileMenu() {
    ============================================ */
 function initCombinedObservers() {
     const observerOptions = {
-        threshold: 0.2,
-        rootMargin: "-10% 0px -70% 0px" // Better for detecting active section
+        threshold: 0.1,
+        rootMargin: "-10% 0px -15% 0px" // Adjusted for better triggering on mobile screens
     };
 
     const navLinks = document.querySelectorAll('.nav-link');
@@ -400,8 +400,9 @@ function initAOS() {
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
-            once: false,
-            offset: 100,
+            once: true, // Improved performance and reliability on mobile
+            offset: 50, // Reduced offset for smaller viewports
+            disable: false, // Explicitly ensure it's not disabled on mobile
             easing: 'ease-out-cubic'
         });
     }
