@@ -136,13 +136,15 @@ function initTypingEffect() {
     if (!typingElement) return;
 
     const roles = [
-        'Aspiring UI Designer',
-        'Frontend Enthusiast',
-        'Creative Developer',
-        'Design Explorer',
-        'UI Design Learner',
-        'Web Enthusiast',
-        'Learning & Building'
+        'Creative UI Designer',
+        'UI & Visual Designer',
+        'User Interface Designer',
+        'UI/UX Design Enthusiast',
+        'Visual Experience Designer',
+        'Interactive UI Designer',
+        'User-Centered Designer',
+        'Modern UI Designer',
+        'Web Designer'
     ];
 
     let roleIndex = 0;
