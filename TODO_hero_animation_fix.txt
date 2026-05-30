@@ -1,0 +1,6 @@
+Hero animation fallback plan:
+1) script.js: add initHeroFallbackAnimations() to add/remove fallback classes for #4o0i6m and #f7j8xt when they enter/leave view.
+2) style.css: add CSS for .premium-hero-fallback-left/right.
+3) Ensure fallback only triggers when AOS hasn't applied .aos-animate.
+4) Verify on desktop/tablet/mobile, and ensure floating/tilt/hover remain unaffected.
+

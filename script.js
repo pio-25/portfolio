@@ -408,7 +408,11 @@ function initAOS() {
             easing: 'ease-out-cubic'
         });
     }
+
+    // Fallback for hero entrance is handled by hero_fallback.js
+
 }
+
 
 /* ============================================
    TERMINAL COMMAND TYPING

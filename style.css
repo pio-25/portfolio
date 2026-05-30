@@ -999,6 +999,11 @@ img { max-width: 100%; display: block; }
     width: auto;
 }
 
+/* ============================================
+   PREMIUM HERO ENTRANCE ANIMATIONS
+   (intentionally removed to restore original behavior)
+   ============================================ */
+
 /* Larger logo for navbar and footer */
 .nav-logo .site-logo-img,
 .footer-logo .site-logo-img {
