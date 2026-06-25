@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -18,6 +18,18 @@
     <link rel="icon" href="ALIRA2.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style_hero_fallback.css" />
+    <style>
+      /* Refine button sizes to be even smaller and reduce width */
+      .btn,
+      .btn-mission,
+      .view-btn,
+      .copy-btn {
+        padding: 5px 12px !important;
+        font-size: 0.75rem !important;
+        width: auto !important;
+        min-width: 0 !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Loading Screen -->
@@ -111,8 +123,7 @@
             <p class="hero-description">
               Passionate about building intuitive interfaces and exploring
               modern web design. I focus on creating clean, user-centric
-              experiences while constantly growing my skills in frontend
-              development and UI design.
+              experiences while constantly growing my skills in UI design.
             </p>
             <div class="hero-stats">
               <div class="stat-item">
@@ -130,10 +141,10 @@
             </div>
             <div class="hero-cta">
               <a href="#projects" class="btn btn-primary"
-                ><i class="fas fa-th-large"></i><span>View Portfolio</span></a
+                ><i class="fas fa-th-large"></i><span>Portfolio</span></a
               >
               <a href="#contact" class="btn btn-secondary"
-                ><i class="fas fa-envelope"></i><span>Get in Touch</span></a
+                ><i class="fas fa-envelope"></i><span>Contact</span></a
               >
             </div>
           </div>
@@ -489,10 +500,77 @@
           <div class="section-line"></div>
         </div>
         <div class="projects-container">
+          <!-- 1. UI/UX Case Study -->
           <div
             class="project-card mission-card"
             data-aos="fade-up"
             data-aos-delay="100"
+            id="project-card-ux"
+          >
+            <div class="mission-header">
+              <div class="mission-level">
+                <span class="level-tag">UI/UX CASE STUDY</span
+                ><span class="difficulty"
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i
+                ></span>
+              </div>
+              <div class="mission-status completed">
+                <i class="fas fa-check-circle"></i><span>COMPLETED</span>
+              </div>
+            </div>
+            <div class="mission-image">
+              <img
+                src="./casestudy/HF Splash Screen.png"
+                alt="SmarKet Case Study"
+              />
+              <div class="mission-overlay">
+                <div class="overlay-content">
+                  <a href="case-study.html" class="view-btn" aria-label="View"
+                    ><i class="fas fa-book-open"></i> Read Study</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mission-body">
+              <h3 class="mission-title">SmarKet: Marketplace Case Study</h3>
+              <p class="mission-desc">
+                A deep dive into the UX research and UI design process for a
+                campus-focused e-commerce platform. Solving the gap between
+                student creativity and local university markets.
+              </p>
+              <div class="mission-tech">
+                <span class="tech-tag">UX Research</span>
+                <span class="tech-tag">IA & Flow</span>
+                <span class="tech-tag">UI Design</span>
+              </div>
+              <div class="mission-features">
+                <div class="feature">
+                  <i class="fas fa-check"></i><span>User Research</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-check"></i><span>Competitor Analysis</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-check"></i
+                  ><span>Information Architecture</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-check"></i><span>Design Decisions</span>
+                </div>
+              </div>
+              <div class="mission-actions">
+                <a href="case-study.html" class="btn btn-mission"
+                  ><i class="fas fa-file-alt"></i> View Full Study</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card mission-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
             id="project-card-1"
           >
             <div class="mission-header">
@@ -511,11 +589,8 @@
               <img src="Bloom and Brew Cafe.png" alt="Animation Project" />
               <div class="mission-overlay">
                 <div class="overlay-content">
-                  <a
-                    href="canva.html"
-                    class="view-btn"
-                    aria-label="View Canva Project"
-                    ><i class="fas fa-eye"></i> View Design</a
+                  <a href="canva.html" class="view-btn" aria-label="View"
+                    ><i class="fas fa-eye"></i> View</a
                   >
                 </div>
               </div>
@@ -550,7 +625,7 @@
               </div>
               <div class="mission-actions">
                 <a href="canva.html" class="btn btn-mission"
-                  ><i class="fas fa-palette"></i> Explore Creative Showcase</a
+                  ><i class="fas fa-palette"></i> Explore</a
                 >
               </div>
             </div>
@@ -583,8 +658,8 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="view-btn"
-                    aria-label="View Smarket Application"
-                    ><i class="fas fa-eye"></i> View Application</a
+                    aria-label="View"
+                    ><i class="fas fa-eye"></i> View</a
                   >
                 </div>
               </div>
@@ -625,7 +700,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-mission"
-                  ><i class="fas fa-external-link-alt"></i> View Live</a
+                  ><i class="fas fa-external-link-alt"></i> Live</a
                 >
               </div>
             </div>

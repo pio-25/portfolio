@@ -22,19 +22,20 @@
 
 .gallery-card {
     background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
+    border: var(--pixel-border);
+    border-radius: 0;
     overflow: hidden;
     transition: all var(--transition-normal);
     position: relative;
     animation: float 4s ease-in-out infinite;
     animation-delay: calc(var(--delay, 0) * 1s);
+    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3), var(--pixel-shadow);
 }
 
 .gallery-card:hover {
-    transform: translateY(-10px);
+    transform: translate(-4px, -4px);
     border-color: var(--accent-pink);
-    box-shadow: var(--glass-shadow);
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.8);
 }
 
 .card-inner {
@@ -114,8 +115,8 @@
     right: 2rem;
 }
 
-.ctrl-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.2s; }
-.ctrl-btn:hover { background: var(--accent-cyan); color: var(--bg-primary); transform: scale(1.1); }
+.ctrl-btn { width: 50px; height: 50px; border-radius: 0; background: var(--glass-bg); border: var(--pixel-border); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.2s; box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3), var(--pixel-shadow); }
+.ctrl-btn:hover { background: var(--accent-cyan); color: var(--bg-primary); transform: translate(-2px, -2px); box-shadow: inset -4px -4px 0px rgba(0,0,0,0.3), 8px 8px 0px rgba(0,0,0,0.8); }
 .close-btn:hover { background: var(--accent-pink); }
 
 /* Mobile & Tablet Optimizations */

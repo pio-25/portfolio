@@ -1,0 +1,2389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmarKet Case Study | UI/UX Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="ALIRA2.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body class="case-study-page">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <div id="cs-progress" class="cs-progress"></div>
+
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="ALIRA.png" alt="ALIRA Logo" class="site-logo-img" />
+        </a>
+        <div class="nav-actions">
+          <a href="index.html#projects" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i><span>Back</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- sticky section nav -->
+    <aside class="study-toc" aria-label="Section navigation">
+      <ul id="study-toc">
+        <li><a href="#introduction">01 Introduction</a></li>
+        <li><a href="#process">02 Process</a></li>
+        <li><a href="#research">03 Research</a></li>
+        <li><a href="#market">04 Market</a></li>
+        <li><a href="#requirements">05 Requirements</a></li>
+        <li><a href="#ideation">06 Ideation</a></li>
+        <li><a href="#solution">07 Solution</a></li>
+        <li><a href="#outcome">08 Outcome</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <!-- HERO -->
+      <section id="hero" class="study-hero-modern">
+        <div class="hero-layout">
+          <div class="hero-text-content" data-aos="fade-up">
+            <span class="hero-eyebrow">UI / UX CASE STUDY</span>
+            <h1 class="project-title">SmarKet — Student Marketplace</h1>
+            <p class="project-summary">
+              A campus-first marketplace that helps student creators sell
+              handmade products through dedicated storefronts, secure UPI
+              payments, order tracking, reviews, and role-based dashboards.
+            </p>
+            <div class="project-info-grid">
+              <div class="info-item">
+                <span>Role</span><strong>UI/UX Designer</strong>
+              </div>
+              <div class="info-item">
+                <span>Platform</span><strong>Web Application</strong>
+              </div>
+              <div class="info-item">
+                <span>Type</span><strong>Full UX/UI Study</strong>
+              </div>
+              <div class="info-item">
+                <span>Tools</span><strong>Figma</strong>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="case-tag">Marketplace</span>
+              <span class="case-tag">E-commerce</span>
+              <span class="case-tag">UX Design</span>
+            </div>
+            <a href="#introduction" class="btn btn-primary cta-btn"
+              >Read the Study</a
+            >
+          </div>
+          <div class="hero-images" aria-hidden="true">
+            <div class="hero-frame hero-frame-1">
+              <img
+                src="./casestudy/HF Splash Screen.png"
+                alt="SmarKet splash screen"
+              />
+            </div>
+            <div class="hero-frame hero-frame-2">
+              <img
+                src="./casestudy/HF Home Screen.png"
+                alt="SmarKet home screen"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 PROJECT INTRODUCTION -->
+      <section id="introduction" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">01 / Project Introduction</span>
+        <h2 class="large-section-title">Project Introduction</h2>
+        <p class="subtitle">
+          shared problems and challenges i was trying to solve
+        </p>
+        <div class="two-col-layout">
+          <div class="overview-text">
+            <p>
+              Students are some of the most creative people on any campus, yet
+              turning that creativity into a real business is messy. Whether
+              they paint, bake, design clothes, or make jewellery, most student
+              creators sell through word of mouth, the odd campus stall, or
+              scattered WhatsApp and Instagram posts. There is no single,
+              trusted place to set up shop, get discovered, and take payments
+              safely.
+            </p>
+            <p>
+              SmarKet replaces that fragmented experience with one dedicated
+              marketplace, so the journey from student hobbyist to micro
+              entrepreneur is faster, more structured, and far less stressful.
+            </p>
+          </div>
+          <div class="highlights-card">
+            <h3>Core Capabilities</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Dedicated seller storefronts</li>
+              <li><i class="fas fa-check"></i> UPI QR + Cash on Delivery</li>
+              <li><i class="fas fa-check"></i> Real-time order tracking</li>
+              <li><i class="fas fa-check"></i> Ratings, reviews &amp; chat</li>
+              <li><i class="fas fa-check"></i> Role-based dashboards</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="block-title">The Problems</h3>
+        <div class="problem-statement-grid">
+          <div class="problem-card seller">
+            <h3>For Sellers</h3>
+            <ul>
+              <li>Scattered, informal selling with no central hub</li>
+              <li>Limited reach beyond close friends</li>
+              <li>No order or inventory management</li>
+              <li>Unsafe, untracked cash / UPI transactions</li>
+            </ul>
+          </div>
+          <div class="problem-card buyer">
+            <h3>For Buyers</h3>
+            <ul>
+              <li>Hard to discover unique peer-made products</li>
+              <li>No trust layer: no ratings, reviews, verification</li>
+              <li>No way to follow an order once placed</li>
+              <li>No room for sellers to grow professionally</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout-box">
+          <p>
+            "There is no dedicated bridge connecting student creators with the
+            local campus market."
+          </p>
+        </div>
+      </section>
+
+      <!-- 02 DESIGN PROCESS -->
+      <section id="process" class="modern-section wide" data-aos="fade-up">
+        <span class="section-kicker">02 / Design Process</span>
+        <h2 class="large-section-title">Design Process</h2>
+        <p class="subtitle">shared my design process + thinking</p>
+        <p class="lead-text">
+          I followed a five-stage design-thinking flow. It kept the work
+          grounded in real student needs and made sure every screen traced back
+          to a problem worth solving.
+        </p>
+        <div class="diagram-frame">
+          <div class="diagram-scroll">
+            <svg
+              viewBox="0 0 1180 548"
+              xmlns="http://www.w3.org/2000/svg"
+              class="cs-diagram"
+              role="img"
+              aria-label="SmarKet design process"
+            >
+              <defs>
+                <marker
+                  id="pah"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="7"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,0 L9,5 L0,10 z" fill="#e2e8f0" />
+                </marker>
+              </defs>
+              <path
+                d="M 1070.0,104 C 1120.0,56 60.0,56 110.0,104"
+                fill="none"
+                stroke="#64748b"
+                stroke-width="2"
+                stroke-dasharray="3,7"
+                marker-end="url(#pah)"
+              />
+              <text
+                x="590.0"
+                y="46"
+                text-anchor="middle"
+                font-size="15"
+                fill="#64748b"
+                font-family="Pixelify Sans,monospace"
+              >
+                iterative throughout
+              </text>
+              <line
+                x1="168.0"
+                y1="178"
+                x2="286.0"
+                y2="178"
+                stroke="#e2e8f0"
+                stroke-width="3"
+                marker-end="url(#pah)"
+              />
+              <line
+                x1="408.0"
+                y1="178"
+                x2="526.0"
+                y2="178"
+                stroke="#e2e8f0"
+                stroke-width="3"
+                marker-end="url(#pah)"
+              />
+              <line
+                x1="648.0"
+                y1="178"
+                x2="766.0"
+                y2="178"
+                stroke="#e2e8f0"
+                stroke-width="3"
+                marker-end="url(#pah)"
+              />
+              <line
+                x1="888.0"
+                y1="178"
+                x2="1006.0"
+                y2="178"
+                stroke="#e2e8f0"
+                stroke-width="3"
+                marker-end="url(#pah)"
+              />
+              <circle
+                cx="110.0"
+                cy="178"
+                r="52"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="4"
+              />
+              <text
+                x="110.0"
+                y="184"
+                text-anchor="middle"
+                font-size="16"
+                fill="#00f0ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Discover
+              </text>
+              <path
+                d="M 100.0,244 L 110.0,257 L 120.0,244"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="3"
+              />
+              <rect
+                x="2.0"
+                y="264"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#00f0ff"
+                stroke-width="2"
+              />
+              <text
+                x="110.0"
+                y="285.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Market Research
+              </text>
+              <rect
+                x="2.0"
+                y="308"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#00f0ff"
+                stroke-width="2"
+              />
+              <text
+                x="110.0"
+                y="329.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Existing System Analysis
+              </text>
+              <rect
+                x="2.0"
+                y="352"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#00f0ff"
+                stroke-width="2"
+              />
+              <text
+                x="110.0"
+                y="373.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Target Audience
+              </text>
+              <rect
+                x="2.0"
+                y="396"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#00f0ff"
+                stroke-width="2"
+              />
+              <text
+                x="110.0"
+                y="417.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Survey (50 College Students)
+              </text>
+              <rect
+                x="2.0"
+                y="440"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#00f0ff"
+                stroke-width="2"
+              />
+              <text
+                x="110.0"
+                y="461.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Campus Insights
+              </text>
+              <circle
+                cx="350.0"
+                cy="178"
+                r="52"
+                fill="#1a1a2e"
+                stroke="#b026ff"
+                stroke-width="4"
+              />
+              <text
+                x="350.0"
+                y="184"
+                text-anchor="middle"
+                font-size="16"
+                fill="#b026ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Define
+              </text>
+              <path
+                d="M 340.0,244 L 350.0,257 L 360.0,244"
+                fill="none"
+                stroke="#b026ff"
+                stroke-width="3"
+              />
+              <rect
+                x="242.0"
+                y="264"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="285.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Problem Statement
+              </text>
+              <rect
+                x="242.0"
+                y="308"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="329.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Empathy Map
+              </text>
+              <rect
+                x="242.0"
+                y="352"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="373.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Personas
+              </text>
+              <rect
+                x="242.0"
+                y="396"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="417.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                User Journey Map
+              </text>
+              <rect
+                x="242.0"
+                y="440"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="461.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                User Stories
+              </text>
+              <rect
+                x="242.0"
+                y="484"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#b026ff"
+                stroke-width="2"
+              />
+              <text
+                x="350.0"
+                y="505.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                User Flow
+              </text>
+              <circle
+                cx="590.0"
+                cy="178"
+                r="52"
+                fill="#1a1a2e"
+                stroke="#ff00a0"
+                stroke-width="4"
+              />
+              <text
+                x="590.0"
+                y="184"
+                text-anchor="middle"
+                font-size="16"
+                fill="#ff00a0"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Ideate
+              </text>
+              <path
+                d="M 580.0,244 L 590.0,257 L 600.0,244"
+                fill="none"
+                stroke="#ff00a0"
+                stroke-width="3"
+              />
+              <rect
+                x="482.0"
+                y="264"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ff00a0"
+                stroke-width="2"
+              />
+              <text
+                x="590.0"
+                y="285.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Card Sorting
+              </text>
+              <rect
+                x="482.0"
+                y="308"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ff00a0"
+                stroke-width="2"
+              />
+              <text
+                x="590.0"
+                y="329.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Sitemap
+              </text>
+              <rect
+                x="482.0"
+                y="352"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ff00a0"
+                stroke-width="2"
+              />
+              <text
+                x="590.0"
+                y="373.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Moodboard
+              </text>
+              <rect
+                x="482.0"
+                y="396"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ff00a0"
+                stroke-width="2"
+              />
+              <text
+                x="590.0"
+                y="417.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Style Tile
+              </text>
+              <circle
+                cx="830.0"
+                cy="178"
+                r="52"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="4"
+              />
+              <text
+                x="830.0"
+                y="184"
+                text-anchor="middle"
+                font-size="16"
+                fill="#ffb000"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Design
+              </text>
+              <path
+                d="M 820.0,244 L 830.0,257 L 840.0,244"
+                fill="none"
+                stroke="#ffb000"
+                stroke-width="3"
+              />
+              <rect
+                x="722.0"
+                y="264"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ffb000"
+                stroke-width="2"
+              />
+              <text
+                x="830.0"
+                y="285.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Sketches
+              </text>
+              <rect
+                x="722.0"
+                y="308"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ffb000"
+                stroke-width="2"
+              />
+              <text
+                x="830.0"
+                y="329.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Low-Fidelity Wireframes
+              </text>
+              <rect
+                x="722.0"
+                y="352"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#ffb000"
+                stroke-width="2"
+              />
+              <text
+                x="830.0"
+                y="373.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                High-Fidelity Mockups
+              </text>
+              <circle
+                cx="1070.0"
+                cy="178"
+                r="52"
+                fill="#1a1a2e"
+                stroke="#39ff14"
+                stroke-width="4"
+              />
+              <text
+                x="1070.0"
+                y="184"
+                text-anchor="middle"
+                font-size="16"
+                fill="#39ff14"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Test
+              </text>
+              <path
+                d="M 1060.0,244 L 1070.0,257 L 1080.0,244"
+                fill="none"
+                stroke="#39ff14"
+                stroke-width="3"
+              />
+              <rect
+                x="962.0"
+                y="264"
+                width="216"
+                height="32"
+                fill="#0a0a1a"
+                stroke="#39ff14"
+                stroke-width="2"
+              />
+              <text
+                x="1070.0"
+                y="285.0"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Usability Testing
+              </text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 USER RESEARCH -->
+      <section id="research" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">03 / User Research</span>
+        <h2 class="large-section-title">User Research</h2>
+        <p class="subtitle">
+          showed user research insights and target audience segments
+        </p>
+        <div class="overview-text">
+          <p>
+            Research combined a review of two peer studies on campus
+            marketplaces with a close look at how students already buy and sell
+            today. The Campus Stalls study, which scored 4.62 / 5 on usability,
+            confirmed that a student-specific marketplace is both wanted and
+            workable.
+          </p>
+        </div>
+        <h3 class="subsection-title">Key Insights</h3>
+        <div class="insights-masonry">
+          <div class="insight-pill">General marketplaces feel too broad</div>
+          <div class="insight-pill">Trust is the real currency</div>
+          <div class="insight-pill">
+            Visibility, not talent, is the bottleneck
+          </div>
+          <div class="insight-pill">Simplicity beats feature overload</div>
+          <div class="insight-pill">UPI preferred, but needs tracking</div>
+          <div class="insight-pill">High demand confirmed (4.62/5)</div>
+        </div>
+        <h3 class="subsection-title">Target Audience</h3>
+        <div class="audience-cards">
+          <div class="audience-card ac-cyan">
+            <i class="fas fa-palette"></i>
+            <h4>Student Creators</h4>
+            <p>
+              Artists, bakers and designers who make handmade goods and want a
+              simple way to sell on campus.
+            </p>
+          </div>
+          <div class="audience-card ac-purple">
+            <i class="fas fa-bolt"></i>
+            <h4>Side Hustle Sellers</h4>
+            <p>
+              Students running a small business to cover living costs, who need
+              reach beyond word of mouth.
+            </p>
+          </div>
+          <div class="audience-card ac-pink">
+            <i class="fas fa-gift"></i>
+            <h4>Curious Buyers</h4>
+            <p>
+              Students after unique, affordable handmade items from people they
+              already trust on campus.
+            </p>
+          </div>
+          <div class="audience-card ac-orange">
+            <i class="fas fa-users"></i>
+            <h4>Campus Community</h4>
+            <p>
+              The entrepreneurship cell, faculty and IT who support and oversee
+              student commerce.
+            </p>
+          </div>
+        </div>
+        <div class="callout-box callout-soft">
+          <p>
+            "The sharpest insight: for student creators the bottleneck isn't
+            talent, it's visibility and trust. So SmarKet is built around
+            discovery and credibility, not just transactions."
+          </p>
+        </div>
+      </section>
+
+      <!-- 04 MARKET RESEARCH -->
+      <section id="market" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">04 / Market Research</span>
+        <h2 class="large-section-title">Market Research</h2>
+        <p class="subtitle">presented competitors analysis results</p>
+        <div class="table-wrapper">
+          <table class="modern-comparison-table">
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Strengths</th>
+                <th>Why It Falls Short</th>
+                <th>Opportunity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Instagram / WhatsApp</td>
+                <td>Free, familiar, instant</td>
+                <td>No carts, payments, or tracking</td>
+                <td>Keep the social feel, add real commerce</td>
+              </tr>
+              <tr>
+                <td>Marketplace / OLX</td>
+                <td>Large audience</td>
+                <td>Generic, no student focus, safety risks</td>
+                <td>Campus-only, verified space</td>
+              </tr>
+              <tr>
+                <td>Etsy</td>
+                <td>Handmade trust, reviews</td>
+                <td>Global, high fees, not local</td>
+                <td>Handmade trust, hyper-local + free</td>
+              </tr>
+              <tr>
+                <td>Campus Stalls (study)</td>
+                <td>Proven concept, 4.62/5</td>
+                <td>Limited payments &amp; chat</td>
+                <td>Add payments, tracking, live chat</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>SmarKet</td>
+                <td>Campus-first + verified storefronts</td>
+                <td>&mdash;</td>
+                <td>Fills the gap: payments + tracking + chat + reviews</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout-box callout-soft">
+          <p>
+            <strong>The gap:</strong> no existing option is campus-first,
+            trust-rich, and genuinely simple all at once. That is exactly the
+            space SmarKet was built to fill.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05 REQUIREMENTS -->
+      <section id="requirements" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">05 / Requirements</span>
+        <h2 class="large-section-title">Requirements</h2>
+        <p class="subtitle">defined requirements + prioritized them</p>
+
+        <h3 class="block-title">User Stories</h3>
+        <div class="stories-grid">
+          <div class="story-card story-seller">
+            <span class="story-who">Aarya &middot; the seller</span>
+            <ul>
+              <li>
+                Set up my own storefront and list items with photos, so I look
+                professional and reach beyond my friends.
+              </li>
+              <li>
+                See one dashboard for pending, in-progress, and completed
+                orders, so nothing slips through.
+              </li>
+              <li>
+                Offer secure UPI, card, or COD options, so every transaction
+                feels safe.
+              </li>
+            </ul>
+          </div>
+          <div class="story-card story-buyer">
+            <span class="story-who">Rohan &middot; the buyer</span>
+            <ul>
+              <li>
+                Search and filter by category, price, and rating, so I find
+                unique items quickly.
+              </li>
+              <li>
+                Get real-time tracking, so I know when to expect pickup or
+                delivery.
+              </li>
+              <li>
+                See ratings, reviews, and chat with the seller, so I can buy
+                with confidence.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="block-title">Card Sorting &mdash; Feature Prioritisation</h3>
+        <div class="moscow-grid">
+          <div class="moscow-col must">
+            <h4>Must Have</h4>
+            <ul>
+              <li>Role-based sign up &amp; login</li>
+              <li>Storefront &amp; listing management</li>
+              <li>Search &amp; filters</li>
+              <li>Cart &amp; checkout</li>
+              <li>Secure payments (UPI / Card / COD)</li>
+              <li>Real-time order tracking</li>
+              <li>Seller dashboard</li>
+              <li>Ratings &amp; reviews</li>
+              <li>Real-time chat</li>
+              <li>Admin dashboard</li>
+            </ul>
+          </div>
+          <div class="moscow-col nice">
+            <h4>Nice To Have</h4>
+            <ul>
+              <li>Wishlist</li>
+              <li>Sales &amp; performance analytics</li>
+              <li>Dispute resolution</li>
+              <li>Loyalty &amp; rewards</li>
+              <li>Geo-location filtering</li>
+              <li>Seller verification</li>
+              <li>Native mobile app</li>
+            </ul>
+          </div>
+          <div class="moscow-col wont">
+            <h4>Won't Have (yet)</h4>
+            <ul>
+              <li>Third-party delivery logistics</li>
+              <li>Multi-campus scaling</li>
+              <li>AI recommendations</li>
+              <li>Biometric / 2FA</li>
+              <li>Off-campus public access</li>
+              <li>High-volume wholesale</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="block-title">Broad Use Cases</h3>
+        <div class="insights-masonry">
+          <div class="insight-pill">
+            Sell handmade goods or services on campus
+          </div>
+          <div class="insight-pill">Discover unique peer-made products</div>
+          <div class="insight-pill">
+            Request a custom, made-to-order piece via chat
+          </div>
+          <div class="insight-pill">
+            Pay safely with UPI / QR or Cash on Delivery
+          </div>
+          <div class="insight-pill">
+            Track an order from placed to delivered
+          </div>
+          <div class="insight-pill">
+            Build a reputation through ratings &amp; reviews
+          </div>
+          <div class="insight-pill">
+            Manage listings &amp; orders from one dashboard
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 IDEATION -->
+      <section id="ideation" class="modern-section wide" data-aos="fade-up">
+        <span class="section-kicker">06 / Ideation</span>
+        <h2 class="large-section-title">Ideation</h2>
+        <p class="subtitle">created basic IA + showed lo-fi wireframes</p>
+        <p class="lead-text">
+          After signing in, the architecture splits by role: buyers land on the
+          Home Screen while sellers go straight to the Seller Dashboard. Each
+          hub keeps its own navigation shallow and predictable.
+        </p>
+        <h3 class="block-title">Site Map / Information Architecture</h3>
+        <div class="diagram-frame">
+          <div class="diagram-scroll">
+            <svg
+              viewBox="0 0 1180 980"
+              xmlns="http://www.w3.org/2000/svg"
+              class="cs-diagram"
+              role="img"
+              aria-label="SmarKet site map"
+            >
+              <path
+                d="M 146,490.0 C 183.0,490.0 183.0,311.7142857142857 220,311.7142857142857"
+                fill="none"
+                stroke="#e2e8f0"
+                stroke-width="2.5"
+              />
+              <path
+                d="M 146,490.0 C 183.0,490.0 183.0,795.1428571428571 220,795.1428571428571"
+                fill="none"
+                stroke="#e2e8f0"
+                stroke-width="2.5"
+              />
+              <rect
+                x="18.0"
+                y="462.0"
+                width="128"
+                height="56"
+                fill="#1a1a2e"
+                stroke="#64748b"
+                stroke-width="2.5"
+              />
+              <text
+                x="82"
+                y="486.21999999999997"
+                text-anchor="middle"
+                font-size="14"
+                fill="#e2e8f0"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Sign In /
+              </text>
+              <text
+                x="82"
+                y="503.71999999999997"
+                text-anchor="middle"
+                font-size="14"
+                fill="#e2e8f0"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Sign Up
+              </text>
+              <rect
+                x="220.0"
+                y="280.7142857142857"
+                width="180"
+                height="62"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="310"
+                y="318.19428571428574"
+                text-anchor="middle"
+                font-size="18"
+                fill="#00f0ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Home Screen
+              </text>
+              <rect
+                x="220.0"
+                y="764.1428571428571"
+                width="180"
+                height="62"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <text
+                x="310"
+                y="800.1828571428571"
+                text-anchor="middle"
+                font-size="14"
+                fill="#ffb000"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Seller Dashboard
+              </text>
+              <path
+                d="M 400,311.7142857142857 C 461.0,311.7142857142857 461.0,70.0 522,70.0"
+                fill="none"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="49.0"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="75.04"
+                text-anchor="middle"
+                font-size="14"
+                fill="#b026ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Browse
+              </text>
+              <path
+                d="M 698,70.0 C 764.0,70.0 764.0,49.0 830,49.0"
+                fill="none"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="33.0"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="53.5"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Category
+              </text>
+              <path
+                d="M 698,70.0 C 764.0,70.0 764.0,91.0 830,91.0"
+                fill="none"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="75.0"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="95.5"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Product
+              </text>
+              <path
+                d="M 400,311.7142857142857 C 461.0,311.7142857142857 461.0,190.85714285714286 522,190.85714285714286"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="169.85714285714286"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="195.89714285714285"
+                text-anchor="middle"
+                font-size="14"
+                fill="#00f0ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Cart
+              </text>
+              <path
+                d="M 698,190.85714285714286 C 764.0,190.85714285714286 764.0,169.85714285714286 830,169.85714285714286"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="153.85714285714286"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="174.35714285714286"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Payment
+              </text>
+              <path
+                d="M 698,190.85714285714286 C 764.0,190.85714285714286 764.0,211.85714285714286 830,211.85714285714286"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="195.85714285714286"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="216.35714285714286"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Order Tracking
+              </text>
+              <path
+                d="M 400,311.7142857142857 C 461.0,311.7142857142857 461.0,311.7142857142857 522,311.7142857142857"
+                fill="none"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="290.7142857142857"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="316.75428571428574"
+                text-anchor="middle"
+                font-size="14"
+                fill="#ff00a0"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Community
+              </text>
+              <path
+                d="M 698,311.7142857142857 C 764.0,311.7142857142857 764.0,290.7142857142857 830,290.7142857142857"
+                fill="none"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="274.7142857142857"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="295.2142857142857"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Chat
+              </text>
+              <path
+                d="M 698,311.7142857142857 C 764.0,311.7142857142857 764.0,332.7142857142857 830,332.7142857142857"
+                fill="none"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="316.7142857142857"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#ff00a0"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="337.2142857142857"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Reviews
+              </text>
+              <path
+                d="M 400,311.7142857142857 C 461.0,311.7142857142857 461.0,432.57142857142856 522,432.57142857142856"
+                fill="none"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="411.57142857142856"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="437.6114285714286"
+                text-anchor="middle"
+                font-size="14"
+                fill="#ffb000"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Notifications
+              </text>
+              <path
+                d="M 400,311.7142857142857 C 461.0,311.7142857142857 461.0,553.4285714285714 522,553.4285714285714"
+                fill="none"
+                stroke="#39ff14"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="532.4285714285714"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#39ff14"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="558.4685714285714"
+                text-anchor="middle"
+                font-size="14"
+                fill="#39ff14"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Profile
+              </text>
+              <path
+                d="M 698,553.4285714285714 C 764.0,553.4285714285714 764.0,553.4285714285714 830,553.4285714285714"
+                fill="none"
+                stroke="#39ff14"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="537.4285714285714"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#39ff14"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="557.9285714285714"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Settings
+              </text>
+              <path
+                d="M 400,795.1428571428571 C 461.0,795.1428571428571 461.0,674.2857142857143 522,674.2857142857143"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="653.2857142857143"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="679.3257142857143"
+                text-anchor="middle"
+                font-size="14"
+                fill="#00f0ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Upload Product
+              </text>
+              <path
+                d="M 400,795.1428571428571 C 461.0,795.1428571428571 461.0,795.1428571428571 522,795.1428571428571"
+                fill="none"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="774.1428571428571"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#b026ff"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="800.1828571428571"
+                text-anchor="middle"
+                font-size="14"
+                fill="#b026ff"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                My Products
+              </text>
+              <path
+                d="M 400,795.1428571428571 C 461.0,795.1428571428571 461.0,916.0 522,916.0"
+                fill="none"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <rect
+                x="522.0"
+                y="895.0"
+                width="176"
+                height="42"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <text
+                x="610"
+                y="921.04"
+                text-anchor="middle"
+                font-size="14"
+                fill="#ffb000"
+                font-family="Pixelify Sans,monospace"
+                font-weight="700"
+              >
+                Orders
+              </text>
+              <path
+                d="M 698,916.0 C 764.0,916.0 764.0,895.0 830,895.0"
+                fill="none"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="879.0"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="899.5"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Pending
+              </text>
+              <path
+                d="M 698,916.0 C 764.0,916.0 764.0,937.0 830,937.0"
+                fill="none"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <rect
+                x="830.0"
+                y="921.0"
+                width="170"
+                height="32"
+                fill="#1a1a2e"
+                stroke="#ffb000"
+                stroke-width="2.5"
+              />
+              <text
+                x="915"
+                y="941.5"
+                text-anchor="middle"
+                font-size="12.5"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+                font-weight="500"
+              >
+                Completed
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <h3 class="block-title">User Flows</h3>
+        <div class="flows-container">
+          <div class="flow-block">
+            <h4>Buyer Flow</h4>
+            <p>
+              Sign In &rarr; Home &rarr; Category &rarr; Product &rarr; Chat
+              &rarr; Cart &rarr; Payment &rarr; Order Tracking
+            </p>
+          </div>
+          <div class="flow-block">
+            <h4>Seller Flow</h4>
+            <p>
+              Sign In &rarr; Seller Dashboard &rarr; Upload Product &rarr; My
+              Products
+            </p>
+          </div>
+        </div>
+
+        <h3 class="block-title">Interactions &amp; Unhappy Paths</h3>
+        <div class="two-col-layout">
+          <div class="highlights-card">
+            <h3>Different ways people interact</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i> Browse by category, or search and
+                filter
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Buy now, or add to bag for later
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Chat to request a custom,
+                made-to-order piece
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Pay by UPI / QR or Cash on Delivery
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Switch roles: shop as a buyer, sell
+                from the dashboard
+              </li>
+            </ul>
+          </div>
+          <div class="highlights-card">
+            <h3>When things don't go to plan</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i> Payment fails &rarr; retry or fall
+                back to Cash on Delivery
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Product out of stock &rarr; Add to
+                Bag is disabled
+              </li>
+              <li>
+                <i class="fas fa-check"></i> No search results &rarr; empty
+                state with suggested categories
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Seller slow to reply &rarr; chat
+                shows status, order still possible
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Order issue &rarr; "Need help?
+                Contact seller" on tracking
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="block-title">Low-Fidelity Wireframes</h3>
+        <p class="lead-text small">
+          Key journeys were mapped as a wireflow &mdash; each screen connects to
+          the next, mirroring the prototype paths from the Figma file.
+        </p>
+        <div class="diagram-frame">
+          <div class="diagram-scroll">
+            <svg
+              viewBox="0 0 1440 2680"
+              xmlns="http://www.w3.org/2000/svg"
+              class="cs-diagram wf-diagram"
+              role="img"
+              aria-label="SmarKet wireframe user flow"
+            >
+              <defs>
+                <marker
+                  id="wfa"
+                  markerWidth="11"
+                  markerHeight="11"
+                  refX="7"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,5 L0,10 z" fill="#00f0ff" />
+                </marker>
+              </defs>
+              <path
+                d="M 210,620 L 340,620"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 270,620 L 270.0,246.0 Q 270,230 286.0,230.0 L 340,230"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 500,620 L 640,620"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 500,230 L 704.0,230.0 Q 720,230 720.0,246.0 L 720,460"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 800,620 L 935,620"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 1095,620 L 1230,620"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 1310,780 L 1310,920"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 420,780 L 420.0,1984.0 Q 420,2000 436.0,2000.0 L 640,2000"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 500,230 L 544.0,230.0 Q 560,230 560.0,246.0 L 560.0,1984.0 Q 560,2000 576.0,2000.0 L 640,2000"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 700,780 L 700.0,1524.0 Q 700,1540 716.0,1540.0 L 935,1540"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 1310,1240 L 1310,1380"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 800,2000 L 935,2000"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 1095,2000 L 1230,2000"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 800,2460 L 935,2460"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <path
+                d="M 1095,2460 L 1230,2460"
+                fill="none"
+                stroke="#00f0ff"
+                stroke-width="2.5"
+                stroke-linejoin="round"
+                marker-end="url(#wfa)"
+              />
+              <image
+                href="./casestudy/Splash%20Screen.png"
+                x="50"
+                y="460"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="130"
+                y="804"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Splash
+              </text>
+              <image
+                href="./casestudy/Signup%20Screen.png"
+                x="340"
+                y="70"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="420"
+                y="414"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Sign Up
+              </text>
+              <image
+                href="./casestudy/SignIn%20Screen.png"
+                x="340"
+                y="460"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="420"
+                y="804"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Sign In
+              </text>
+              <image
+                href="./casestudy/Home%20Screen.png"
+                x="640"
+                y="460"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="720"
+                y="804"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Home
+              </text>
+              <image
+                href="./casestudy/Category%20Screen.png"
+                x="935"
+                y="460"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1015"
+                y="804"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Category
+              </text>
+              <image
+                href="./casestudy/Product%20Screen.png"
+                x="1230"
+                y="460"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1310"
+                y="804"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Product
+              </text>
+              <image
+                href="./casestudy/Chat%20Screen.png"
+                x="1230"
+                y="920"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1310"
+                y="1264"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Chat
+              </text>
+              <image
+                href="./casestudy/Profile%20Screen.png"
+                x="935"
+                y="1380"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1015"
+                y="1724"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Profile
+              </text>
+              <image
+                href="./casestudy/Notification%20Screen.png"
+                x="1230"
+                y="1380"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1310"
+                y="1724"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Notifications
+              </text>
+              <image
+                href="./casestudy/Seller%20Dashboard%20Screen.png"
+                x="640"
+                y="1840"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="720"
+                y="2184"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Seller Dashboard
+              </text>
+              <image
+                href="./casestudy/Upload%20Product%20Screen.png"
+                x="935"
+                y="1840"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1015"
+                y="2184"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Upload Product
+              </text>
+              <image
+                href="./casestudy/My%20Products%20Screen.png"
+                x="1230"
+                y="1840"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1310"
+                y="2184"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                My Products
+              </text>
+              <image
+                href="./casestudy/Cart%20Screen.png"
+                x="640"
+                y="2300"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="720"
+                y="2644"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Cart
+              </text>
+              <image
+                href="./casestudy/Payment%20Screen.png"
+                x="935"
+                y="2300"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1015"
+                y="2644"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Payment
+              </text>
+              <image
+                href="./casestudy/Order%20Tracking%20Screen.png"
+                x="1230"
+                y="2300"
+                width="160"
+                height="320"
+                preserveAspectRatio="xMidYMid meet"
+              />
+              <text
+                x="1310"
+                y="2644"
+                text-anchor="middle"
+                font-size="18"
+                fill="#94a3b8"
+                font-family="Pixelify Sans,monospace"
+              >
+                Order Tracking
+              </text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 SOLUTION -->
+      <section
+        id="solution"
+        class="modern-section ui-showcase-master"
+        data-aos="fade-up"
+      >
+        <span class="section-kicker">07 / Solution</span>
+        <h2 class="large-section-title">Solution &amp; Design Decisions</h2>
+        <p class="subtitle">
+          broke down my final hi-fi solution + design decisions
+        </p>
+
+        <div class="decisions-cards-grid">
+          <div class="decision-modern-card">
+            <h4>Warm Marketplace Identity</h4>
+            <p><strong>Challenge:</strong> avoid a cold, corporate feel.</p>
+            <p>
+              <strong>Decision:</strong> warm cream &amp; gold tones that echo
+              handmade craft.
+            </p>
+            <p>
+              <strong>Impact:</strong> approachable, student-friendly
+              experience.
+            </p>
+          </div>
+          <div class="decision-modern-card">
+            <h4>Role-Based Experience</h4>
+            <p>
+              <strong>Challenge:</strong> buyers, sellers, admins need different
+              things.
+            </p>
+            <p><strong>Decision:</strong> one login, three focused views.</p>
+            <p><strong>Impact:</strong> cleaner, less cluttered interfaces.</p>
+          </div>
+          <div class="decision-modern-card">
+            <h4>Checkout with UPI QR</h4>
+            <p><strong>Challenge:</strong> payment complexity and security.</p>
+            <p><strong>Decision:</strong> UPI QR + COD, no card data stored.</p>
+            <p>
+              <strong>Impact:</strong> familiar checkout for Indian students.
+            </p>
+          </div>
+          <div class="decision-modern-card">
+            <h4>Order Status Tracker</h4>
+            <p><strong>Challenge:</strong> trust drops after payment.</p>
+            <p>
+              <strong>Decision:</strong> visual bar: Processing &rarr; Shipped
+              &rarr; Delivered.
+            </p>
+            <p><strong>Impact:</strong> transparency without extra messages.</p>
+          </div>
+          <div class="decision-modern-card">
+            <h4>Simple Seller Dashboard</h4>
+            <p>
+              <strong>Challenge:</strong> students need quick, minimal controls.
+            </p>
+            <p>
+              <strong>Decision:</strong> add listing, my products, my orders,
+              buyer view.
+            </p>
+            <p>
+              <strong>Impact:</strong> easy management for part-time sellers.
+            </p>
+          </div>
+          <div class="decision-modern-card">
+            <h4>Trust Built Into the UI</h4>
+            <p>
+              <strong>Challenge:</strong> the old system had no trust layer.
+            </p>
+            <p>
+              <strong>Decision:</strong> ratings, reviews, chat, tracking
+              surfaced everywhere.
+            </p>
+            <p>
+              <strong>Impact:</strong> answers the biggest user concern
+              directly.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-heading-group mt-large">
+          <h3 class="block-title center">Final UI Designs</h3>
+          <p class="lead-text small center">
+            High-fidelity screens in a warm cream &amp; gold system, with
+            Poppins headings and Inter body text.
+          </p>
+        </div>
+        <div class="sol-block">
+          <div class="sol-shots">
+            <img
+              src="./casestudy/HF%20Splash%20Screen.png"
+              alt="SmarKet Splash screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Signup%20Screen.png"
+              alt="SmarKet Sign Up screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Onboarding</span>
+            <h4>Splash</h4>
+            <p>
+              A clean splash screen introduces the SmarKet brand the moment a
+              student opens the app.
+            </p>
+            <h4>Sign Up</h4>
+            <p>
+              New users register with verified credentials and choose a role:
+              Buyer, Seller, or both.
+            </p>
+          </div>
+        </div>
+        <div class="sol-block rev">
+          <div class="sol-shots">
+            <img
+              src="./casestudy/HF%20SignIn%20Screen.png"
+              alt="SmarKet Sign In screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Home%20Screen.png"
+              alt="SmarKet Home screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Sign In &amp; Home</span>
+            <h4>Sign In</h4>
+            <p>
+              Returning users sign in securely; a buyer lands on Home while a
+              seller is taken to the dashboard.
+            </p>
+            <h4>Home</h4>
+            <p>
+              Categories, search and popular products lead the home screen so
+              buyers find unique handmade items fast.
+            </p>
+          </div>
+        </div>
+        <div class="sol-block">
+          <div class="sol-shots three">
+            <img
+              src="./casestudy/HF%20Category%20Screen.png"
+              alt="SmarKet Category screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Product%20Details%20Screen.png"
+              alt="SmarKet Product screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Chat%20Screen.png"
+              alt="SmarKet Chat screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Browse, Product &amp; Chat</span>
+            <h4>Category</h4>
+            <p>
+              Listings are grouped by category and can be filtered by price and
+              seller rating.
+            </p>
+            <h4>Product</h4>
+            <p>
+              Photos, price, ratings and a verified seller badge, with Add to
+              Bag, Buy Now and Chat with Seller.
+            </p>
+            <h4>Chat</h4>
+            <p>
+              A real time chat connects buyers straight to the seller, so
+              shoppers can request custom, made to order versions of a handmade
+              piece before they buy.
+            </p>
+          </div>
+        </div>
+        <div class="sol-block rev">
+          <div class="sol-shots three">
+            <img
+              src="./casestudy/HF%20Cart%20Screen.png"
+              alt="SmarKet Your Bag screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Payment%20Screen.png"
+              alt="SmarKet Payment screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Order%20Tracking%20Screen.png"
+              alt="SmarKet Order Tracking screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Bag, Payment &amp; Tracking</span>
+            <h4>Your Bag</h4>
+            <p>
+              The bag lists chosen items with a clear summary and handmade picks
+              before checkout.
+            </p>
+            <h4>Payment</h4>
+            <p>
+              Secure checkout with UPI / QR and Cash on Delivery; no card
+              details are ever stored.
+            </p>
+            <h4>Order Tracking</h4>
+            <p>
+              A visual tracker follows each order through Processing, Shipped
+              and Delivered.
+            </p>
+          </div>
+        </div>
+        <div class="sol-block">
+          <div class="sol-shots">
+            <img
+              src="./casestudy/HF%20Profile%20Screen.png"
+              alt="SmarKet Profile screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Notifications%20Screen.png"
+              alt="SmarKet Notifications screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Buyer Profile &amp; Notifications</span>
+            <h4>Profile</h4>
+            <p>
+              The buyer's profile holds account details, orders, saved
+              addresses, payment methods and settings.
+            </p>
+            <h4>Notifications</h4>
+            <p>Order updates and platform alerts keep buyers informed.</p>
+          </div>
+        </div>
+        <div class="sol-block rev">
+          <div class="sol-shots three">
+            <img
+              src="./casestudy/HF%20Seller%20Dasboard%20Screen.png"
+              alt="SmarKet Seller Dashboard screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20Upload%20Product%20Screen.png"
+              alt="SmarKet Upload Product screen"
+              loading="lazy"
+            /><img
+              src="./casestudy/HF%20My%20Products.png"
+              alt="SmarKet My Products screen"
+              loading="lazy"
+            />
+          </div>
+          <div class="sol-text">
+            <span class="sol-label">Seller Workspace</span>
+            <h4>Seller Dashboard</h4>
+            <p>
+              On signing in as a seller, the user lands here to manage pending,
+              in progress and completed orders.
+            </p>
+            <h4>Upload Product</h4>
+            <p>
+              Listing a product takes a name, price, stock, category,
+              description and image.
+            </p>
+            <h4>My Products</h4>
+            <p>Sellers review and search their active listings at a glance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 OUTCOME -->
+      <section id="outcome" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">08 / Outcome</span>
+        <h2 class="large-section-title">Outcome</h2>
+        <div class="outcome-content">
+          <p>
+            SmarKet turns a scattered, risky, word-of-mouth process into one
+            trusted campus marketplace. Sellers get reach, structure, and safe
+            payments; buyers get discovery, tracking, and confidence; and the
+            campus gets a living showcase of its own student talent.
+          </p>
+          <div class="metrics-grid">
+            <div class="metric-pill"><strong>14</strong> Screens Designed</div>
+            <div class="metric-pill">
+              <strong>2</strong> User Roles (Buyer &amp; Seller)
+            </div>
+            <div class="metric-pill">
+              <strong>4.62/5</strong> Validated Demand
+            </div>
+          </div>
+        </div>
+
+        <h3 class="block-title">What's Next &amp; Where It's Heading</h3>
+        <div class="two-col-layout">
+          <div class="overview-text">
+            <p>
+              Campus commerce sits inside a fast-growing student creator
+              economy, where trust-based, peer-to-peer selling is steadily
+              replacing scattered WhatsApp and Instagram trade. SmarKet is
+              positioned to grow with that shift, from a single campus into a
+              connected network of student marketplaces.
+            </p>
+          </div>
+          <div class="highlights-card">
+            <h3>Roadmap</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Multi-campus rollout</li>
+              <li>
+                <i class="fas fa-check"></i> Seller analytics &amp; visual
+                reports
+              </li>
+              <li>
+                <i class="fas fa-check"></i> AI-based product recommendations
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Integrated delivery &amp; logistics
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Loyalty, rewards &amp;
+                verified-seller badges
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <div class="footer-right">
+            <div class="footer-logo">
+              <img src="ALIRA.png" alt="ALIRA Logo" class="site-logo-img" />
+            </div>
+            <p class="footer-text">
+              Built with <i class="fas fa-heart"></i> by Pranali Nalavde
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">2026 All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor">
+      <div class="ghost-body"></div>
+      <div class="ghost-eyes">
+        <div class="ghost-eye left"></div>
+        <div class="ghost-eye right"></div>
+      </div>
+      <div class="ghost-mouth"></div>
+      <div class="ghost-cheeks">
+        <div class="ghost-cheek left"></div>
+        <div class="ghost-cheek right"></div>
+      </div>
+      <div class="ghost-tail"></div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="case-study.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+    </script>
+  </body>
+</html>

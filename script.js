@@ -79,7 +79,7 @@ function initParticles() {
 
         draw() {
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillRect(this.x, this.y, this.size, this.size);
             ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
             ctx.fill();
         }
@@ -271,7 +271,7 @@ function initCombinedObservers() {
    CARD TILT EFFECT
    ============================================ */
 function initCardTilt() {
-    const cards = document.querySelectorAll('.mission-card, .profile-card-3d, .dashboard-card');
+    const cards = document.querySelectorAll('.mission-card, .profile-card-3d, .about-card, .internship-card, .persona-card, .insight-card, .user-story-card, .solution-card, .sorting-col');
 
     cards.forEach(card => {
         const imageContainer = card.querySelector('.profile-image-container');
@@ -392,7 +392,41 @@ function initSmoothScroll() {
 }
 
 function initActiveNavLinks() {
-    // Logic migrated to initCombinedObservers for performance
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    if (!navLinks.length || !sections.length) return;
+
+    const setActiveLink = (sectionId) => {
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
+        });
+    };
+
+    const updateActiveLink = () => {
+        const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
+        const scrollPosition = window.scrollY + navbarHeight + 10;
+
+        let currentSectionId = sections[0]?.id || 'hero';
+
+        sections.forEach(section => {
+            if (scrollPosition >= section.offsetTop) {
+                currentSectionId = section.id;
+            }
+        });
+
+        setActiveLink(currentSectionId);
+    };
+
+    window.addEventListener('scroll', updateActiveLink, { passive: true });
+    window.addEventListener('resize', updateActiveLink);
+    window.addEventListener('load', updateActiveLink);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', () => setTimeout(updateActiveLink, 350));
+    });
+
+    updateActiveLink();
 }
 
 /* ============================================
@@ -495,14 +529,20 @@ function initCustomCursor() {
 
         // Dynamic Opacity: Fades out near the right edge to prevent visual "popping"
         const distToRight = viewportWidth - e.clientX;
-        if (distToRight <= 10) {
+        if (distToRight <= 20) {
             cursor.style.opacity = '0';
-        } else if (distToRight <= 25) {
-            // Smoothly interpolate opacity between 10px (0) and 25px (1)
-            const opacity = (distToRight - 10) / 15;
+            cursor.style.pointerEvents = 'none';
+            document.body.classList.add('show-native-cursor');
+        } else if (distToRight <= 40) {
+            // Smoothly interpolate opacity between 20px (0) and 40px (1)
+            const opacity = (distToRight - 20) / 20;
             cursor.style.opacity = opacity.toString();
+            cursor.style.pointerEvents = 'none';
+            document.body.classList.remove('show-native-cursor');
         } else {
             cursor.style.opacity = '1';
+            cursor.style.pointerEvents = 'none';
+            document.body.classList.remove('show-native-cursor');
         }
     });
 
