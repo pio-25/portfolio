@@ -76,8 +76,6 @@
   line-height: 1.4;
 }
 
-
-
 .block-title {
   font-family: var(--font-display);
   font-size: 0.95rem;
@@ -854,8 +852,6 @@
   display: block;
 }
 
-
-
 /* ---------- navbar tweak ---------- */
 .navbar.scrolled {
   background: var(--bg-primary) !important;
@@ -889,193 +885,10 @@
 
 /* ---------- responsive ---------- */
 
-
 /* large tablets / small laptops */
-@media (max-width: 1024px) {
-
-  .modern-section,
-  .modern-section.wide {
-    padding: 50px 32px;
-  }
-
-  .decisions-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-
-  .hero-layout,
-  .two-col-layout,
-  .two-col-layout-research,
-  .problem-statement-grid,
-  .stories-grid,
-  .flows-container {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .decisions-cards-grid,
-  .moscow-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .wireframe-gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .mockup-alt-row,
-  .mockup-alt-row.inverted {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .sol-block,
-  .sol-block.rev {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .sol-shots {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .sol-shots.three {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .audience-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-frame-1,
-  .hero-frame-2 {
-    transform: none;
-  }
-
-  /* let the hero buttons wrap instead of overflowing */
-  .hero-text-content .btn {
-    margin-top: 12px;
-  }
-}
 
 /* tablets */
-@media (max-width: 768px) {
-
-  .modern-section,
-  .modern-section.wide {
-    padding: 44px 24px;
-    margin-bottom: 64px;
-  }
-
-  .study-hero-modern {
-    padding: 130px 24px 60px;
-  }
-
-  .decisions-cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* diagrams stay scrollable but don't force a huge min-width on small screens */
-  .cs-diagram {
-    min-width: 560px;
-  }
-
-  .wf-diagram {
-    min-width: 620px;
-  }
-
-  .outcome-content {
-    padding: 36px;
-  }
-
-  .outcome-content p {
-    font-size: 1.1rem;
-  }
-}
 
 /* large phones */
-@media (max-width: 600px) {
-  .wireframe-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sol-text h4 {
-    font-size: 0.78rem;
-  }
-
-  /* hero CTA + prototype buttons stack full feel, wrap cleanly */
-  .hero-text-content .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 520px) {
-  .study-hero-modern {
-    padding: 120px 20px 60px;
-  }
-
-  .hero-images {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .hero-frame {
-    max-width: 260px;
-  }
-
-  .audience-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .wireframe-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-info-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .outcome-content {
-    padding: 30px;
-  }
-
-  .sol-shots.three {
-    flex-wrap: wrap;
-  }
-
-  .sol-shots.three img {
-    width: calc(50% - 8px);
-  }
-}
 
 /* small phones */
-@media (max-width: 400px) {
-
-  .modern-section,
-  .modern-section.wide,
-  .study-hero-modern {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .project-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-title {
-    font-size: 1.5rem;
-  }
-
-  .metric-pill {
-    padding: 12px 18px;
-  }
-}
