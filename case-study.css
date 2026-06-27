@@ -860,39 +860,7 @@
   display: block;
 }
 
-/* ---------- sticky TOC ---------- */
-.study-toc {
-  position: fixed;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-  z-index: 60;
-}
 
-.study-toc ul {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.study-toc a {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  padding: 4px 10px;
-  border-left: 3px solid transparent;
-  transition: var(--transition-fast);
-  display: block;
-}
-
-.study-toc a:hover {
-  color: var(--text-primary);
-}
-
-.study-toc a.active {
-  color: var(--accent-cyan);
-  border-left-color: var(--accent-cyan);
-}
 
 /* ---------- navbar tweak ---------- */
 .navbar.scrolled {
@@ -926,11 +894,7 @@
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1280px) {
-  .study-toc {
-    display: none;
-  }
-}
+
 
 /* large tablets / small laptops */
 @media (max-width: 1024px) {
