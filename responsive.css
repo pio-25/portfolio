@@ -1,0 +1,237 @@
+/* ==========================================================================
+   responsive.css  —  RESPONSIVE OVERRIDE LAYER
+   --------------------------------------------------------------------------
+   Load this file LAST on every page (after style.css and the page-specific
+   stylesheet). Every rule lives inside a max-width media query, so the
+   desktop layout (>= 993px) is rendered EXACTLY as before — nothing here
+   touches it. Smaller screens get progressively adjusted.
+
+   Pages covered:
+     index.html      -> uses style.css        (.hero-*, .about-*, .skills-*,
+                                                .projects-*, .internship-*,
+                                                .contact-*, .footer-*)
+     case-study.html -> uses case-study.css   (.study-hero-modern, .hero-layout,
+                                                grids, .sol-block, .mockup-alt-row...)
+     smarket.html    -> uses smarket.css      (.gallery-*, .lightbox-*, .card-*)
+     canva.html      -> uses canva.css        (.gallery-*, .lightbox-*, .card-*)
+
+   Breakpoint tiers (max-width):
+     1200  large laptop      992  tablet portrait / nav collapse point
+     1024  small laptop      768  large phone / small tablet
+      900  ---                600  phone
+      480  small phone        380  very small phone
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1200px — large laptops
+   Light touch: pull the hero columns a little closer, nothing structural.
+   ========================================================================== */
+@media screen and (max-width: 1200px) {
+  /* index hero — keep two columns but tighten the gap so the profile card
+     doesn't crowd the copy on narrower laptops */
+  .hero-container { gap: clamp(1.25rem, 2.6vw, 3rem); }
+
+  /* case study — slightly tighter section gutters */
+  .modern-section,
+  .modern-section.wide { padding-left: 36px; padding-right: 36px; }
+}
+
+
+/* ==========================================================================
+   1024px — small laptops / landscape tablets
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  /* index — begin easing hero vertical rhythm */
+  .hero-section { padding-top: 116px; }
+
+  /* projects move to a slightly tighter 2-up before they stack at 768 */
+  .projects-container { gap: clamp(1.5rem, 3.5vw, 2.5rem); }
+
+  /* gallery (smarket / canva) — keep multi-column but never let a track be
+     wider than the viewport */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 2rem;
+  }
+}
+
+
+/* ==========================================================================
+   992px — TABLET PORTRAIT  (the important one)
+   The mobile nav already engages here in style.css, so this is where the
+   index hero is refactored from a 2-column grid into a single centred column.
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+
+  /* ---- index: HERO becomes a single centred column ---- */
+  .hero-section {
+    padding-top: 110px;
+    min-height: auto;            /* let content set the height once stacked */
+  }
+  .hero-container {
+    grid-template-columns: 1fr;  /* was 1fr 1fr — the core fix */
+    gap: 2.5rem;
+    justify-items: center;
+  }
+  .hero-content { text-align: center; width: 100%; max-width: 640px; }
+  .hero-role { justify-content: center; }
+  .hero-description { margin-left: auto; margin-right: auto; }
+  .hero-stats { justify-content: center; flex-wrap: wrap; }
+  .stat-item { align-items: center; }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero-visual { width: 100%; }   /* card stays centred via existing justify-content */
+
+  /* ---- index: ABOUT + SKILLS stack a step earlier so the right-hand
+          column isn't squeezed on portrait tablets ---- */
+  .about-container { grid-template-columns: 1fr; }
+  .skills-container { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* case study hero offsets are already removed at 992 in case-study.css;
+     nothing extra needed here. */
+}
+
+
+/* ==========================================================================
+   768px — LARGE PHONES / SMALL TABLETS
+   Most single-column stacking already happens here in the base files; this
+   tier handles spacing, type and overflow safety.
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+  /* global section rhythm */
+  :root { --section-padding: clamp(48px, 12vw, 80px); }
+
+  /* ---- index ---- */
+  .hero-section { padding-top: 104px; }
+  .section-header { margin-bottom: 2.75rem; }
+
+  /* About: inner key/value grid to one column so values aren't clipped */
+  .about-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Projects already 1-col at 768 in style.css; keep cards from over-widening */
+  .projects-container { gap: 2rem; }
+
+  /* Internship: header / footer already stack in style.css. Make sure the
+     footer wraps cleanly and learnings sit in one column. */
+  .internship-footer { gap: 0.75rem; }
+
+  /* Contact terminal: allow long values to wrap before the 480 tier */
+  .contact-value { word-break: break-word; }
+
+  /* ---- gallery (smarket / canva) ---- */
+  .gallery-section { padding-top: 100px; }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.75rem;
+  }
+
+  /* ---- case study ----  (base file already covers most of 768) */
+  .project-summary { max-width: none; }
+  .lead-text { max-width: none; }
+}
+
+
+/* ==========================================================================
+   600px — PHONES
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+
+  /* ---- index ---- */
+  /* Stats read better stacked vertically once space is tight */
+  .hero-stats { gap: 1.25rem 2rem; }
+
+  /* About key/value pairs to a single column */
+  .about-grid { grid-template-columns: 1fr; }
+
+  /* Education / internship tag rows wrap naturally; ensure markers don't
+     force overflow */
+  .edu-item { gap: 0.75rem; }
+
+  /* ---- gallery ---- */
+  .card-inner { height: 200px; }
+
+  /* ---- case study --- (base file handles wireframe grid + sol shots here) */
+}
+
+
+/* ==========================================================================
+   480px — SMALL PHONES
+   Reduce global gutters and finish stacking anything still side-by-side.
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+
+  /* tighter global side padding everywhere that uses the token */
+  :root { --container-padding: 16px; }
+
+  /* ---- index hero ---- */
+  .hero-section { padding-top: 96px; }
+  .hero-title .name { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .hero-cta { width: 100%; }
+  .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+
+  /* stat numbers a touch smaller so three items never overflow */
+  .stat-number { font-size: clamp(1.4rem, 7vw, 1.8rem); }
+
+  /* Contact terminal: base file already switches contact-item to column at
+     480; reinforce comfortable tap spacing */
+  .contact-item { gap: 0.5rem; }
+
+  /* Section titles scale down a notch (display font is wide) */
+  .section-title { font-size: clamp(1.5rem, 7.5vw, 2.2rem); }
+
+  /* ---- gallery ---- */
+  .gallery-section { padding-top: 92px; }
+  .card-inner { height: 190px; }
+  .lightbox-caption { font-size: 0.95rem; }
+
+  /* back-to-top sits a little inboard so it clears narrow content */
+  .back-to-top { bottom: 1.25rem; right: 1.25rem; }
+  .toast-notification { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+
+  /* ---- case study (base file covers most; add type safety) ---- */
+  .large-section-title { font-size: clamp(1.15rem, 6vw, 1.6rem); }
+  .lead-text { font-size: 1rem; }
+  .project-summary { font-size: 1rem; }
+  .outcome-content p { font-size: 1.05rem; }
+}
+
+
+/* ==========================================================================
+   380px — VERY SMALL PHONES
+   ========================================================================== */
+@media screen and (max-width: 380px) {
+
+  :root { --container-padding: 14px; }
+
+  /* ---- index ---- */
+  .hero-title .name { font-size: clamp(1.8rem, 9.5vw, 2.2rem); }
+  .hero-stats { gap: 1rem 1.5rem; }
+  .stat-label { font-size: 0.78rem; }
+  .nav-logo .site-logo-img,
+  .footer-logo .site-logo-img { height: 46px; }
+
+  /* ---- gallery ---- */
+  .gallery-grid { grid-template-columns: 1fr; }
+  .card-inner { height: 180px; }
+
+  /* ---- case study ---- */
+  .project-title { font-size: 1.35rem; }
+  .metric-pill { padding: 12px 16px; }
+  .metric-pill strong { font-size: 1.15rem; }
+}
+
+
+/* ==========================================================================
+   LANDSCAPE PHONES (short viewports)
+   A full-height hero is awkward when the phone is on its side; let it shrink.
+   ========================================================================== */
+@media screen and (max-height: 520px) and (orientation: landscape) {
+  .hero-section { min-height: auto; padding-top: 96px; padding-bottom: 48px; }
+  .scroll-indicator { display: none; }
+}
