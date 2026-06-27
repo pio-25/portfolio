@@ -76,13 +76,7 @@
   line-height: 1.4;
 }
 
-.subtitle {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-bottom: 2.4rem;
-  font-style: italic;
-}
+
 
 .block-title {
   font-family: var(--font-display);
