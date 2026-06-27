@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creative Showcase | Canva Projects</title>
+    <title>SmarKet | Full-Stack Project Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" href="ALIRA2.png" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="canva.css" />
+    <link rel="stylesheet" href="smarket.css" />
     <style>
       /* Refine button sizes to be even smaller and reduce width */
       .btn {
@@ -48,362 +48,383 @@
     <main class="main-content">
       <section class="gallery-section">
         <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Creative Portfolio</span>
-          <h2 class="section-title">Canva Design Gallery</h2>
+          <span class="section-tag">Full-Stack Development</span>
+          <h2 class="section-title">SmarKet Project Gallery</h2>
           <div class="section-line"></div>
           <p class="gallery-intro">
-            A collection of brand and marketing design work created in Canva,
-            spanning social media creatives, packaging, print layouts and full
-            brand identity systems. Each piece focuses on deliberate
-            composition, harmonious colour palettes and consistent visual
-            storytelling across formats.
+            A campus-focused e-commerce marketplace built with Python, Flask,
+            MySQL and Socket.IO. Below is a walkthrough of the live application,
+            from buyer onboarding and product discovery to seller tools and the
+            admin analytics dashboard.
           </p>
         </div>
 
         <div class="gallery-grid" id="gallery-grid">
-          <!-- Gallery Items (Using folder 'c') -->
-
-          <!-- 1. Social Media Poster (Single Image) -->
+          <!-- 1. Sign Up Page (Single) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
             <div
               class="card-inner"
-              onclick="
-                openLightbox('c/Social Media Poster.jpg', 'Social Media Poster')
-              "
+              onclick="openLightbox('smarket/Signup.png', 'Sign Up Page')"
             >
-              <img
-                src="c/Social Media Poster.jpg"
-                alt="Social Media Poster"
-                loading="lazy"
-              />
+              <img src="smarket/Signup.png" alt="Sign Up Page" loading="lazy" />
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <a
-                  class="overlay-link"
-                  href="canva.html"
-                  aria-label="View Project"
-                  >View</a
-                >
+                <i class="fas fa-search-plus"></i><span>View</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Social Media Poster</h4>
-              <span class="tag">Social Media Creative</span>
+              <h4>Sign Up Page</h4>
+              <span class="tag">Role-Based Auth</span>
             </div>
           </div>
 
-          <!-- 2. YouTube Thumbnail (Single Image) -->
+          <!-- 2. Login Page (Single) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
             <div
               class="card-inner"
-              onclick="openLightbox('c/YT Thumbnail.jpg', 'YouTube Thumbnail')"
+              onclick="openLightbox('smarket/Login.png', 'Login Page')"
             >
-              <img
-                src="c/YT Thumbnail.jpg"
-                alt="YouTube Thumbnail"
-                loading="lazy"
-              />
+              <img src="smarket/Login.png" alt="Login Page" loading="lazy" />
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
+                <i class="fas fa-search-plus"></i><span>View</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>YouTube Thumbnail</h4>
-              <span class="tag">Content Design</span>
+              <h4>Login Page</h4>
+              <span class="tag">Secure Access</span>
             </div>
           </div>
 
-          <!-- 3. Product Advertisement (Single Image) -->
+          <!-- 3. Profile Page (Single) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
             <div
               class="card-inner"
-              onclick="
-                openLightbox(
-                  'c/Product Advertisement.jpg',
-                  'Product Advertisement',
-                )
-              "
+              onclick="openLightbox('smarket/Profile.png', 'Profile Page')"
             >
               <img
-                src="c/Product Advertisement.jpg"
-                alt="Product Advertisement"
+                src="smarket/Profile.png"
+                alt="Profile Page"
                 loading="lazy"
               />
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
+                <i class="fas fa-search-plus"></i><span>View</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Product Advertisement</h4>
-              <span class="tag">Ad Creative</span>
+              <h4>Profile Page</h4>
+              <span class="tag">User Account</span>
             </div>
           </div>
 
-          <!-- 4. Flyer Design (Single Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
-            <div
-              class="card-inner"
-              onclick="openLightbox('c/Flyer.png', 'Flyer Design')"
-            >
-              <img src="c/Flyer.png" alt="Flyer Design" loading="lazy" />
-              <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Flyer Design</h4>
-              <span class="tag">Marketing Creative</span>
-            </div>
-          </div>
-
-          <!-- 5. Mood Board (Single Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card-inner"
-              onclick="openLightbox('c/Mood Board.jpg', 'Mood Board')"
-            >
-              <img src="c/Mood Board.jpg" alt="Mood Board" loading="lazy" />
-              <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Mood Board</h4>
-              <span class="tag">Creative Direction</span>
-            </div>
-          </div>
-
-          <!-- 6. Brand Guideline Design (Single Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="card-inner"
-              onclick="
-                openLightbox(
-                  'c/Brand Guideline Design .jpg',
-                  'Brand Guideline Design',
-                )
-              "
-            >
-              <img
-                src="c/Brand Guideline Design .jpg"
-                alt="Brand Guideline Design"
-                loading="lazy"
-              />
-              <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Brand Guideline Design</h4>
-              <span class="tag">Brand Identity</span>
-            </div>
-          </div>
-
-          <!-- 7. Invitation Card (Single Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
-            <div
-              class="card-inner"
-              onclick="openLightbox('c/Invitation Card.jpg', 'Invitation Card')"
-            >
-              <img
-                src="c/Invitation Card.jpg"
-                alt="Invitation Card"
-                loading="lazy"
-              />
-              <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Invitation Card</h4>
-              <span class="tag">Visual Design</span>
-            </div>
-          </div>
-
-          <!-- 8. Business Card Design (Multi-Image) -->
+          <!-- 4. Home Page (Multi - 3) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
             <div
               class="card-inner"
               onclick="
                 openLightbox(
-                  'c/v1.png',
-                  'Business Card Design',
-                  'c/v1.png,c/v2.png',
+                  'smarket/Home1.png',
+                  'Home Page',
+                  'smarket/Home1.png,smarket/Home2.png,smarket/Home3.png',
                 )
               "
-              data-images="c/v1.png,c/v2.png"
+              data-images="smarket/Home1.png,smarket/Home2.png,smarket/Home3.png"
             >
-              <img src="c/v1.png" alt="Business Card Design" loading="lazy" />
-              <div class="image-count-badge">
-                <i class="fas fa-layer-group"></i> 2 Images
-              </div>
-              <div class="card-overlay">
-                <i class="fas fa-images"></i>
-                <span>Gallery</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Business Card Design</h4>
-              <span class="tag">Brand Identity</span>
-            </div>
-          </div>
-
-          <!-- 9. Menu Design (Multi-Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card-inner"
-              onclick="
-                openLightbox(
-                  'c/Menu1.jpg',
-                  'Menu Design',
-                  'c/Menu1.jpg,c/Menu2.jpg,c/Menu3.jpg',
-                )
-              "
-              data-images="c/Menu1.jpg,c/Menu2.jpg,c/Menu3.jpg"
-            >
-              <img src="c/Menu1.jpg" alt="Menu Design" loading="lazy" />
+              <img src="smarket/Home1.png" alt="Home Page" loading="lazy" />
               <div class="image-count-badge">
                 <i class="fas fa-layer-group"></i> 3 Images
               </div>
               <div class="card-overlay">
-                <i class="fas fa-images"></i>
-                <span>Gallery</span>
+                <i class="fas fa-images"></i><span>Gallery</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Menu Design</h4>
-              <span class="tag">Layout Design</span>
+              <h4>Home Page</h4>
+              <span class="tag">Buyer Experience</span>
             </div>
           </div>
 
-          <!-- 10. Magazine Cover (Single Image) -->
+          <!-- 5. Category Page (Multi - 4) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'smarket/Category1.png',
+                  'Category Page',
+                  'smarket/Category1.png,smarket/Category2.png,smarket/Category3.png,smarket/Category4.png',
+                )
+              "
+              data-images="smarket/Category1.png,smarket/Category2.png,smarket/Category3.png,smarket/Category4.png"
+            >
+              <img
+                src="smarket/Category1.png"
+                alt="Category Page"
+                loading="lazy"
+              />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 4 Images
+              </div>
+              <div class="card-overlay">
+                <i class="fas fa-images"></i><span>Gallery</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Category Page</h4>
+              <span class="tag">Product Discovery</span>
+            </div>
+          </div>
+
+          <!-- 6. Product Page (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/Productpg.png', 'Product Page')"
+            >
+              <img
+                src="smarket/Productpg.png"
+                alt="Product Page"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Product Page</h4>
+              <span class="tag">Product Detail</span>
+            </div>
+          </div>
+
+          <!-- 7. Chat with Seller (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/Chatpg.png', 'Chat with Seller')"
+            >
+              <img
+                src="smarket/Chatpg.png"
+                alt="Chat with Seller"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Chat with Seller</h4>
+              <span class="tag">Real-Time (Socket.IO)</span>
+            </div>
+          </div>
+
+          <!-- 8. Wishlist Page (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/Wishlistpg.png', 'Wishlist Page')"
+            >
+              <img
+                src="smarket/Wishlistpg.png"
+                alt="Wishlist Page"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Wishlist Page</h4>
+              <span class="tag">Saved Items</span>
+            </div>
+          </div>
+
+          <!-- 9. Cart Page (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/Cartpg.png', 'Cart Page')"
+            >
+              <img src="smarket/Cartpg.png" alt="Cart Page" loading="lazy" />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Cart Page</h4>
+              <span class="tag">Shopping Cart</span>
+            </div>
+          </div>
+
+          <!-- 10. Checkout & Payment (Multi - 2) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
             <div
               class="card-inner"
               onclick="
                 openLightbox(
-                  'c/Magazine Cover using grid & guidelines.jpg',
-                  'Magazine Cover',
+                  'smarket/Checkout1.png',
+                  'Checkout & Payment',
+                  'smarket/Checkout1.png,smarket/Checkout2.png',
                 )
               "
+              data-images="smarket/Checkout1.png,smarket/Checkout2.png"
             >
               <img
-                src="c/Magazine Cover using grid & guidelines.jpg"
-                alt="Magazine Cover"
+                src="smarket/Checkout1.png"
+                alt="Checkout and Payment"
                 loading="lazy"
               />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 2 Images
+              </div>
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
+                <i class="fas fa-images"></i><span>Gallery</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Magazine Cover</h4>
-              <span class="tag">Editorial Layout</span>
+              <h4>Checkout &amp; Payment</h4>
+              <span class="tag">UPI &amp; COD</span>
             </div>
           </div>
 
-          <!-- 11. Product Packaging (Single Image) -->
+          <!-- 11. My Orders (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/MyOrders.png', 'My Orders')"
+            >
+              <img src="smarket/MyOrders.png" alt="My Orders" loading="lazy" />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>My Orders</h4>
+              <span class="tag">Order Tracking</span>
+            </div>
+          </div>
+
+          <!-- 12. Order Invoice (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="card-inner"
+              onclick="openLightbox('smarket/Invoice.png', 'Order Invoice')"
+            >
+              <img
+                src="smarket/Invoice.png"
+                alt="Order Invoice"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Order Invoice</h4>
+              <span class="tag">Auto-Generated Billing</span>
+            </div>
+          </div>
+
+          <!-- 13. Notifications Page (Single) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox('smarket/Notification.png', 'Notifications Page')
+              "
+            >
+              <img
+                src="smarket/Notification.png"
+                alt="Notifications Page"
+                loading="lazy"
+              />
+              <div class="card-overlay">
+                <i class="fas fa-search-plus"></i><span>View</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Notifications Page</h4>
+              <span class="tag">Status Alerts</span>
+            </div>
+          </div>
+
+          <!-- 14. Seller Dashboard (Multi - 2) -->
+          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card-inner"
+              onclick="
+                openLightbox(
+                  'smarket/Seller1.png',
+                  'Seller Dashboard',
+                  'smarket/Seller1.png,smarket/Seller2.png',
+                )
+              "
+              data-images="smarket/Seller1.png,smarket/Seller2.png"
+            >
+              <img
+                src="smarket/Seller1.png"
+                alt="Seller Dashboard"
+                loading="lazy"
+              />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 2 Images
+              </div>
+              <div class="card-overlay">
+                <i class="fas fa-images"></i><span>Gallery</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h4>Seller Dashboard</h4>
+              <span class="tag">Listings &amp; Orders</span>
+            </div>
+          </div>
+
+          <!-- 15. Admin Dashboard & Reports (Multi - 6) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
             <div
               class="card-inner"
               onclick="
-                openLightbox('c/Product Packaging.jpg', 'Product Packaging')
+                openLightbox(
+                  'smarket/Adm1.png',
+                  'Admin Dashboard & Reports',
+                  'smarket/Adm1.png,smarket/Adm2.png,smarket/Adm3.png,smarket/Adm4.png,smarket/Adm5.png,smarket/Adm6.png',
+                )
               "
+              data-images="smarket/Adm1.png,smarket/Adm2.png,smarket/Adm3.png,smarket/Adm4.png,smarket/Adm5.png,smarket/Adm6.png"
             >
               <img
-                src="c/Product Packaging.jpg"
-                alt="Product Packaging"
+                src="smarket/Adm1.png"
+                alt="Admin Dashboard and Reports"
                 loading="lazy"
               />
+              <div class="image-count-badge">
+                <i class="fas fa-layer-group"></i> 6 Images
+              </div>
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
+                <i class="fas fa-images"></i><span>Gallery</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Product Packaging</h4>
-              <span class="tag">Packaging & Branding</span>
+              <h4>Admin Dashboard &amp; Reports</h4>
+              <span class="tag">Sales &amp; Analytics</span>
             </div>
           </div>
 
-          <!-- 12. Product POV Design (Single Image) -->
+          <!-- 16. Feedback Form (Single) -->
           <div class="gallery-card" data-aos="fade-up" data-aos-delay="400">
             <div
               class="card-inner"
-              onclick="
-                openLightbox('c/Product POV Design.jpg', 'Product POV Design')
-              "
+              onclick="openLightbox('smarket/Feedback.png', 'Feedback Form')"
             >
               <img
-                src="c/Product POV Design.jpg"
-                alt="Product POV Design"
+                src="smarket/Feedback.png"
+                alt="Feedback Form"
                 loading="lazy"
               />
               <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
+                <i class="fas fa-search-plus"></i><span>View</span>
               </div>
             </div>
             <div class="card-info">
-              <h4>Product POV Design</h4>
-              <span class="tag">Product Visualization </span>
-            </div>
-          </div>
-
-          <!-- 13. T-shirt Design (Single Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card-inner"
-              onclick="openLightbox('c/T-shirt Design.jpg', 'T-shirt Design')"
-            >
-              <img
-                src="c/T-shirt Design.jpg"
-                alt="T-shirt Design"
-                loading="lazy"
-              />
-              <div class="card-overlay">
-                <i class="fas fa-search-plus"></i>
-                <span>View</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>T-shirt Design</h4>
-              <span class="tag">Merchandise Design</span>
-            </div>
-          </div>
-
-          <!-- 14. Calendar Design (Multi-Image) -->
-          <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="card-inner"
-              onclick="
-                openLightbox(
-                  'c/Calendar1.jpg',
-                  'Calendar Design',
-                  'c/Calendar1.jpg,c/Calendar2.jpg,c/Calendar3.jpg,c/Calendar4.jpg,c/Calendar5.jpg,c/Calendar6.jpg,c/Calendar7.jpg,c/Calendar8.jpg,c/Calendar9.jpg,c/Calendar10.jpg,c/Calendar11.jpg,c/Calendar12.jpg',
-                )
-              "
-              data-images="c/Calendar1.jpg,c/Calendar2.jpg,c/Calendar3.jpg,c/Calendar4.jpg,c/Calendar5.jpg,c/Calendar6.jpg,c/Calendar7.jpg,c/Calendar8.jpg,c/Calendar9.jpg,c/Calendar10.jpg,c/Calendar11.jpg,c/Calendar12.jpg"
-            >
-              <img src="c/Calendar1.jpg" alt="Calendar Design" loading="lazy" />
-              <div class="image-count-badge">
-                <i class="fas fa-layer-group"></i> 12 Images
-              </div>
-              <div class="card-overlay">
-                <i class="fas fa-images"></i>
-                <span>Year</span>
-              </div>
-            </div>
-            <div class="card-info">
-              <h4>Calendar Design</h4>
-              <span class="tag">Print & Layout</span>
+              <h4>Feedback Form</h4>
+              <span class="tag">Ratings &amp; Reviews</span>
             </div>
           </div>
         </div>
@@ -464,7 +485,7 @@
               <img src="ALIRA.png" alt="ALIRA Logo" class="site-logo-img" />
             </div>
             <p class="footer-text">
-              Designed & Built with <i class="fas fa-heart"></i> by Pranali
+              Designed &amp; Built with <i class="fas fa-heart"></i> by Pranali
               Nalavde
             </p>
           </div>
@@ -494,7 +515,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <!-- Reusing particle logic -->
-    <script src="canva.js"></script>
+    <script src="smarket.js"></script>
 
     <!-- Custom Pixel Ghost Cursor -->
     <div id="custom-cursor" class="custom-cursor">
