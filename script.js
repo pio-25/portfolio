@@ -429,31 +429,29 @@ function initActiveNavLinks() {
     updateActiveLink();
 }
 
-[{
-    "resource": "/c:/Users/Pranali Nalavde/Desktop/p2/responsive.css",
-    "owner": "_generated_diagnostic_collection_name_#0",
-    "code": {
-        "value": "compat-api/css",
-        "target": {
-            "$mid": 1,
-            "path": "/docs/Web/CSS/min-height",
-            "scheme": "https",
-            "authority": "developer.mozilla.org"
-        }
-    },
-    "severity": 4,
-    "message": "'min-height: auto' is not supported by Firefox 22+, Firefox for Android 22+.",
-    "source": "Microsoft Edge Tools",
-    "startLineNumber": 585,
-    "startColumn": 31,
-    "endLineNumber": 585,
-    "endColumn": 35,
-    "modelVersionId": 13,
-    "origin": "extHost1"
-}]
-// Fallback for hero entrance is handled by hero_fallback.js
+/* ============================================
+   AOS INITIALIZATION
+   ============================================ */
+function initAOS() {
+    if (typeof AOS === 'undefined') return;
 
+    AOS.init({
+        duration: 800,
+        once: false,
+        offset: 60,            // smaller offset = more reliable trigger on short mobile screens
+        easing: 'ease-out-cubic'
+    });
 
+    // Recalculate positions AFTER fonts/images load and after the loading
+    // screen is gone — this is what fixes animations not firing on mobile.
+    const refresh = () => AOS.refreshHard();
+
+    window.addEventListener('load', refresh);
+    window.addEventListener('resize', refresh);
+    window.addEventListener('orientationchange', refresh);
+    // loading screen hides ~1000ms after load; refresh just after that
+    setTimeout(refresh, 1300);
+}
 
 
 /* ============================================
