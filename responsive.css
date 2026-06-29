@@ -1,5 +1,5 @@
 /* ==========================================================================
-<<<<<<< HEAD
+
    responsive.css  —  RESPONSIVE OVERRIDE LAYER
    --------------------------------------------------------------------------
    Load this file LAST on every page (after style.css and the page-specific
@@ -24,19 +24,6 @@
    ========================================================================== */
 
 
-=======
-   responsive.css  —  SINGLE CONSOLIDATED RESPONSIVE LAYER
-   --------------------------------------------------------------------------
-   Load LAST on every page (after style.css + the page-specific stylesheet).
-   This file now holds EVERY responsive rule for the whole site:
-     PART 1  rules migrated verbatim out of style.css / case-study.css /
-             smarket.css / canva.css  (kept in their original order so beh
-             behaviour is identical to before)
-     PART 2  the additional responsive fixes (hero stacking, gallery overflow,
-             small-phone polish, landscape handling)
-   The base CSS files now contain DESKTOP-ONLY rules (all @media removed),
-   so desktop renders exactly as designed and all adaptation lives here.
-   ========================================================================== */
 
 
 /* ##########################################################################
@@ -385,7 +372,7 @@
    landscape handling). Loaded after PART 1 so these intentionally win.
    ########################################################################## */
 
->>>>>>> 6dfeda5 (modified files)
+
 /* ==========================================================================
    1200px — large laptops
    Light touch: pull the hero columns a little closer, nothing structural.
@@ -430,7 +417,7 @@
   /* ---- index: HERO becomes a single centred column ---- */
   .hero-section {
     padding-top: 110px;
-    min-height: auto;            /* let content set the height once stacked */
+    min-height: 0;
   }
   .hero-container {
     grid-template-columns: 1fr;  /* was 1fr 1fr — the core fix */
@@ -595,6 +582,6 @@
    A full-height hero is awkward when the phone is on its side; let it shrink.
    ========================================================================== */
 @media screen and (max-height: 520px) and (orientation: landscape) {
-  .hero-section { min-height: auto; padding-top: 96px; padding-bottom: 48px; }
+  .hero-section { min-height: 0; padding-top: 96px; padding-bottom: 48px; }
   .scroll-indicator { display: none; }
 }

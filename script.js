@@ -429,23 +429,31 @@ function initActiveNavLinks() {
     updateActiveLink();
 }
 
-/* ============================================
-   AOS INITIALIZATION
-   ============================================ */
-function initAOS() {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: false,
-            offset: 100,
-            // disable: false, // Explicitly ensure it's not disabled on mobile
-            easing: 'ease-out-cubic'
-        });
-    }
+[{
+    "resource": "/c:/Users/Pranali Nalavde/Desktop/p2/responsive.css",
+    "owner": "_generated_diagnostic_collection_name_#0",
+    "code": {
+        "value": "compat-api/css",
+        "target": {
+            "$mid": 1,
+            "path": "/docs/Web/CSS/min-height",
+            "scheme": "https",
+            "authority": "developer.mozilla.org"
+        }
+    },
+    "severity": 4,
+    "message": "'min-height: auto' is not supported by Firefox 22+, Firefox for Android 22+.",
+    "source": "Microsoft Edge Tools",
+    "startLineNumber": 585,
+    "startColumn": 31,
+    "endLineNumber": 585,
+    "endColumn": 35,
+    "modelVersionId": 13,
+    "origin": "extHost1"
+}]
+// Fallback for hero entrance is handled by hero_fallback.js
 
-    // Fallback for hero entrance is handled by hero_fallback.js
 
-}
 
 
 /* ============================================
