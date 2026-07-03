@@ -137,6 +137,7 @@ function initTypingEffect() {
 
     const roles = [
         'Creative UI Designer',
+        'Product Designer',
         'UI & Visual Designer',
         'User Interface Designer',
         'UI/UX Design Enthusiast',
