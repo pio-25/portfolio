@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initTypingEffect();
     initNavbar();
     initMobileMenu();
+    initKeyboardActivatableCards();
     initCombinedObservers();
     initCardTilt();
     initCopyToClipboard();
@@ -205,9 +206,18 @@ function initMobileMenu() {
     const navMenu = document.getElementById('nav-menu');
     if (!navToggle || !navMenu) return;
 
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
+    const toggleMenu = () => {
+        const isActive = navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    };
+
+    navToggle.addEventListener('click', toggleMenu);
+    navToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu();
+        }
     });
 
     // Close menu when clicking a link
@@ -216,6 +226,28 @@ function initMobileMenu() {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+/* ============================================
+   KEYBOARD-ACTIVATABLE GALLERY CARDS
+   (canva.html / smarket.html lightbox triggers)
+   ============================================ */
+function initKeyboardActivatableCards() {
+    document.querySelectorAll('.card-inner[onclick]').forEach(card => {
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+        if (!card.hasAttribute('role')) card.setAttribute('role', 'button');
+        if (!card.hasAttribute('aria-label')) {
+            const title = card.parentElement?.querySelector('.card-info h4')?.textContent?.trim();
+            if (title) card.setAttribute('aria-label', `View ${title}`);
+        }
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
         });
     });
 }
