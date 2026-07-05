@@ -118,6 +118,16 @@
   top: 16px;
 }
 
+.case-study-page .accessibility-image {
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  display: block;
+  margin: 24px auto 0;
+  border: none;
+  box-shadow: none;
+}
+
 .case-study-page .story-card {
   min-height: 100%;
 }
