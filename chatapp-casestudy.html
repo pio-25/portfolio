@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App Case Study | UI/UX Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="ALIRA2.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="case-study.css" />
+    <link rel="stylesheet" href="chatapp-casestudy.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body class="case-study-page">
+    <canvas id="particle-canvas" class="particle-canvas"></canvas>
+    <div id="cs-progress" class="cs-progress"></div>
+
+    <nav id="navbar" class="navbar scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="ALIRA.png" alt="ALIRA Logo" class="site-logo-img" />
+        </a>
+        <div class="nav-actions">
+          <a href="index.html#projects" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i><span>Back</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section id="hero" class="study-hero-modern">
+        <div class="hero-layout">
+          <div class="hero-text-content" data-aos="fade-up">
+            <span class="hero-eyebrow">UI / UX CASE STUDY</span>
+            <h1 class="project-title">Chat App Landing Page &amp; Website</h1>
+            <p class="project-summary">
+              A high-converting marketing experience for a team chat product,
+              designed in Figma and shipped live in Webflow with a clear hero,
+              trust-building proof, and one strong call to action.
+            </p>
+            <div class="project-info-grid">
+              <div class="info-item">
+                <span>Role</span><strong>UI/UX &amp; Web Designer</strong>
+              </div>
+              <div class="info-item">
+                <span>Type</span><strong>Self-driven project</strong>
+              </div>
+              <div class="info-item">
+                <span>Tools</span><strong>Figma, Webflow, WAVE</strong>
+              </div>
+              <div class="info-item">
+                <span>Live Site</span><strong>Webflow</strong>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span class="case-tag">Landing Page</span>
+              <span class="case-tag">Marketing Design</span>
+              <span class="case-tag">Accessibility</span>
+            </div>
+            <a
+              class="btn btn-secondary ghost"
+              href="https://chatflow-app.webflow.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-play"></i> View Live Site
+            </a>
+            <a href="#introduction" class="btn btn-primary cta-btn"
+              >Read the Study</a
+            >
+          </div>
+
+          <div class="hero-images" aria-hidden="true">
+            <div class="hero-frame hero-frame-1">
+              <img
+                src="./chatApp/Desktop-View.png"
+                alt="Desktop view of the chat app landing page"
+                loading="lazy"
+              />
+            </div>
+            <div class="hero-frame hero-frame-2">
+              <img
+                src="./chatApp/Mobile-View.png"
+                alt="Mobile view of the chat app landing page"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="introduction" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">01 / Project Introduction</span>
+        <h2 class="large-section-title">The Goal</h2>
+
+        <div class="two-col-layout">
+          <div class="overview-text">
+            <p>
+              I wanted to design and ship a responsive marketing page for a team
+              chat product rather than leave the work as a static mockup. The
+              challenge was simple but important: turn a visitor into a sign-up
+              through clear messaging, strong trust signals, and a frictionless
+              path to action.
+            </p>
+            <p>
+              This was a self-initiated project, so I defined the audience as
+              small teams and startups looking for a simple chat tool and built
+              the page around the hesitation they would likely feel before
+              committing.
+            </p>
+          </div>
+          <div class="highlights-card">
+            <h3>Project Focus</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Turn visitors into sign-ups</li>
+              <li>
+                <i class="fas fa-check"></i> Make the value obvious immediately
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Build trust before asking for
+                action
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Deliver a fully responsive
+                experience
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">02 / Approach &amp; Decisions</span>
+        <h2 class="large-section-title">Approach and Key Decisions</h2>
+        <p class="lead-text">
+          I structured the page around the way a visitor actually decides, so
+          each section answers a specific question before asking for the next
+          action.
+        </p>
+
+        <div class="problem-statement-grid">
+          <div class="problem-card seller">
+            <h3>Hero</h3>
+            <ul>
+              <li>Lead with the product's core value in the largest type</li>
+              <li>Keep the first screen free of distractions</li>
+              <li>Position the primary CTA as the next obvious step</li>
+            </ul>
+          </div>
+          <div class="problem-card buyer">
+            <h3>Features &amp; Social Proof</h3>
+            <ul>
+              <li>
+                Frame features around user benefits rather than feature dumps
+              </li>
+              <li>Use logos and testimonials to handle trust early</li>
+              <li>
+                Repeat the call to action so the conversion path stays clear
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="visual-design" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">03 / Visual Design</span>
+        <h2 class="large-section-title">Visual Design</h2>
+        <div class="two-col-layout">
+          <div class="overview-text">
+            <p>
+              To make the page feel like one coherent product, I built it around
+              a consistent visual system with strong hierarchy, rhythm, and
+              spacing. Type scale, spacing, button styling, and section rhythm
+              were kept consistent so the experience felt polished from top to
+              bottom.
+            </p>
+            <p>
+              I designed it in Figma first to lock in the visual system, then
+              rebuilt it in Webflow so it could live as a real, responsive
+              experience across mobile, tablet, and desktop.
+            </p>
+          </div>
+          <div class="highlights-card">
+            <h3>Design Principles</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Strong visual hierarchy</li>
+              <li>
+                <i class="fas fa-check"></i> Generous spacing and breathing room
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Consistent buttons and section
+                rhythm
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Responsive layout across devices
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-gallery-block">
+          <h3 class="block-title">Desktop High-Fidelity Screens</h3>
+          <div class="image-stack">
+            <img
+              src="chatApp/Desktop-View.png"
+              alt="Desktop hero view"
+              loading="lazy"
+            />
+            <img
+              src="chatApp/D_Section2.png"
+              alt="Desktop section two view"
+              loading="lazy"
+            />
+            <img
+              src="chatApp/D_Section3.png"
+              alt="Desktop section three view"
+              loading="lazy"
+            />
+            <img
+              src="chatApp/D-Footer.png"
+              alt="Desktop footer view"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="visual-gallery-block">
+          <h3 class="block-title">Mobile High-Fidelity Screens</h3>
+          <div class="image-stack mobile-stack">
+            <img
+              src="chatApp/Mobile-View.png"
+              alt="Mobile hero view"
+              loading="lazy"
+            />
+            <img
+              src="chatApp/Section2.png"
+              alt="Mobile section two view"
+              loading="lazy"
+            />
+            <img
+              src="chatApp/Section3.png"
+              alt="Mobile section three view"
+              loading="lazy"
+              class="mobile-image-override"
+            />
+            <img
+              src="chatApp/Footer.png"
+              alt="Mobile footer view"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">04 / Accessibility</span>
+        <h2 class="large-section-title">Accessibility</h2>
+        <div class="callout-box callout-soft">
+          <p>
+            <strong>WAVE audit:</strong> the first pass flagged colour-contrast
+            issues and a missing document language attribute. These were then
+            corrected to improve readability, structure, and screen-reader
+            interpretation.
+          </p>
+        </div>
+        <div class="story-grid">
+          <div class="story-card">
+            <h3>What I fixed</h3>
+            <ul>
+              <li>Adjusted colour contrast to better align with WCAG AA</li>
+              <li>
+                Set the page language for assistive technology and translation
+              </li>
+              <li>
+                Kept the layout and hierarchy clear for scanning and navigation
+              </li>
+            </ul>
+          </div>
+          <div class="story-card">
+            <h3>What I learned</h3>
+            <p>
+              Accessibility became part of the design process rather than a
+              final polish step. It shaped the choices for contrast, hierarchy,
+              and overall clarity from the start.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="reflection" class="modern-section" data-aos="fade-up">
+        <span class="section-kicker">05 / Reflection</span>
+        <h2 class="large-section-title">Reflection</h2>
+
+        <div class="problem-statement-grid">
+          <div class="problem-card seller">
+            <h3>What I learned</h3>
+            <ul>
+              <li>
+                Visual hierarchy and consistency carry a landing page more than
+                anything else
+              </li>
+              <li>
+                Building it live in Webflow showed how the design behaves on
+                real screens and devices
+              </li>
+              <li>Accessibility decisions improve both usability and trust</li>
+            </ul>
+          </div>
+          <div class="problem-card buyer">
+            <h3>What I'd do next</h3>
+            <ul>
+              <li>Ground the copy in deeper audience research</li>
+              <li>Write sharper benefit-led messaging for the hero and CTA</li>
+              <li>
+                A/B test the headline and primary button for higher conversion
+              </li>
+              <li>
+                Extend testing with manual keyboard and screen-reader review
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="chatapp-casestudy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+/* ============================================
+   CHAT APP CASE STUDY — portfolio styling
+   ============================================ */
+
+.case-study-page .mockup-preview {
+  background: var(--bg-primary);
+  border: var(--pixel-border);
+  box-shadow: var(--case-shadow);
+  padding: 22px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.case-study-page .mockup-preview h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  line-height: 1.5;
+}
+
+.case-study-page .mockup-preview p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.case-study-page .preview-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.case-study-page .preview-pill {
+  width: 88%;
+  height: 16px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+}
+
+.case-study-page .preview-row {
+  display: grid;
+  gap: 8px;
+}
+
+.case-study-page .preview-row span {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.case-study-page .preview-row span:nth-child(2) {
+  width: 80%;
+}
+
+.case-study-page .preview-row span:nth-child(3) {
+  width: 60%;
+}
+
+.case-study-page .story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.case-study-page .visual-gallery-block {
+  margin-top: 36px;
+}
+
+.case-study-page .image-stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.case-study-page .image-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.case-study-page .mobile-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-study-page .mobile-stack img {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1374 / 2736;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.case-study-page .mobile-stack img.mobile-image-override {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1574 / 2932;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  top: 16px;
+}
+
+.case-study-page .story-card {
+  min-height: 100%;
+}
+
+.case-study-page .story-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--accent-pink);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.case-study-page .story-card ul li {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  padding-left: 18px;
+  position: relative;
+}
+
+.case-study-page .story-card ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 768px) {
+  .case-study-page .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-page .image-stack,
+  .case-study-page .mobile-stack {
+    grid-template-columns: 1fr;
+  }
+}
