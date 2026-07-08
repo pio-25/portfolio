@@ -141,8 +141,8 @@ function initTypingEffect() {
         'UI/UX Designer',
         'Web Designer',
         'UI Designer',
-        'Interaction Designer',
         'Visual Designer',
+        'Interaction Designer',
     ];
 
     let roleIndex = 0;
