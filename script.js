@@ -135,16 +135,15 @@ function initParticles() {
 function initTypingEffect() {
     const typingElement = document.getElementById('typing-text');
     if (!typingElement) return;
-
     const roles = [
         'Product Designer',
         'UI/UX Designer',
-        'UI Designer',
         'Web Designer',
-        'Visual Designer',
+        'UI Designer',
         'Interaction Designer',
-        'Frontend Designer',
-        'Design Systems Designer'
+        'Visual Designer',
+        'Design Systems Designer',
+        'Frontend Designer'
     ];
 
     let roleIndex = 0;
