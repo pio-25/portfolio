@@ -137,10 +137,10 @@ function initTypingEffect() {
     if (!typingElement) return;
 
     const roles = [
-        'Product Designer',
-        'UI/UX Designer',
-        'Web Designer',
         'UI Designer',
+        'UI/UX Designer',
+        'Product Designer',
+        'Web Designer',        
         'Visual Designer',
         'Interaction Designer',
     ];
