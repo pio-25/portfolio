@@ -140,7 +140,7 @@ function initTypingEffect() {
         'UI Designer',
         'UI/UX Designer',
         'Product Designer',
-        'Web Designer',        
+        'Web Designer',
         'Visual Designer',
         'Interaction Designer',
     ];
