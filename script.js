@@ -533,92 +533,89 @@ function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
 
     if (!cursor) {
-        console.warn('Custom cursor element not found.');
+        console.error('Custom cursor element was not found.');
         return;
     }
 
-    // Only show the custom cursor when the device has a real mouse/pointer.
-    const hasMouse = window.matchMedia(
-        '(hover: hover) and (pointer: fine)'
+    // Do not use the custom cursor on touch devices
+    const touchDevice = window.matchMedia(
+        '(hover: none) and (pointer: coarse)'
     ).matches;
 
-    if (!hasMouse) {
+    if (touchDevice) {
         cursor.style.display = 'none';
         return;
     }
 
+
+
+    // Force the cursor to be visible
     cursor.style.display = 'block';
-    cursor.style.opacity = '0';
+    cursor.style.visibility = 'visible';
+    cursor.style.opacity = '1';
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
+
     let cursorX = mouseX;
     let cursorY = mouseY;
 
-    const ease = 0.2;
+    const ease = 0.18;
 
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        // Make cursor visible as soon as the mouse enters the page.
         cursor.style.opacity = '1';
     });
 
-    // Smooth cursor movement
-    function animateCursor() {
+    function updateCursor() {
         cursorX += (mouseX - cursorX) * ease;
         cursorY += (mouseY - cursorY) * ease;
 
-        cursor.style.left = `${cursorX}px`;
-        cursor.style.top = `${cursorY}px`;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
 
-        requestAnimationFrame(animateCursor);
+        requestAnimationFrame(updateCursor);
     }
 
-    animateCursor();
+    updateCursor();
 
-    // Interactive elements
+    // Hover effects
     const interactiveElements = document.querySelectorAll(
-        'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
-        '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, ' +
-        '.card-inner, input, textarea, [role="button"]'
+        'a, button, input, textarea, .btn, .nav-link, ' +
+        '.contact-item, .mission-card, .soft-skill-card, ' +
+        '.skill-item, .copy-btn, .gallery-card, .card-inner, ' +
+        '[role="button"]'
     );
 
-    interactiveElements.forEach((el) => {
-        el.addEventListener('mouseenter', () => {
+    interactiveElements.forEach(function (element) {
+
+        element.addEventListener('mouseenter', function () {
             cursor.classList.add('hovering');
-
-            createAirPuff(
-                cursorX + window.scrollX,
-                cursorY + window.scrollY
-            );
-
-            playSound('puff');
         });
 
-        el.addEventListener('mouseleave', () => {
+        element.addEventListener('mouseleave', function () {
             cursor.classList.remove('hovering');
         });
+
     });
 
-    // Click state
-    document.addEventListener('mousedown', () => {
+    // Click animation
+    document.addEventListener('mousedown', function () {
         cursor.classList.add('clicking');
     });
 
-    document.addEventListener('mouseup', () => {
+    document.addEventListener('mouseup', function () {
         cursor.classList.remove('clicking');
     });
 
-    // Hide when mouse leaves the browser window
-    document.addEventListener('mouseleave', () => {
+    // Hide when mouse leaves the page
+    document.addEventListener('mouseleave', function () {
         cursor.style.opacity = '0';
     });
 
-    // Show again when mouse enters
-    document.addEventListener('mouseenter', () => {
+    document.addEventListener('mouseenter', function () {
         cursor.style.opacity = '1';
     });
 }

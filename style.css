@@ -663,12 +663,12 @@ img { max-width: 100%; display: block; }
         width: 28px;
         height: 36px;
         pointer-events: none;
-        z-index: 999999;
+        z-index: 2147483647;
         transform: translate(-50%, -50%);
-        opacity: 0;
+        opacity: 1;
+        visibility: visible;
         display: block;
-        filter: drop-shadow(0 0 8px rgba(179, 136, 255, 0.5)) drop-shadow(0 0 12px rgba(124, 240, 255, 0.3));
-    /* position: fixed;
+        filter: drop-shadow(0 0 8px rgba(179, 136, 255, 0.5)) drop-shadow(0 0 12px rgba(124, 240, 255, 0.3));    /* position: fixed;
     top: 0;
     left: 0;
     width: 28px;
