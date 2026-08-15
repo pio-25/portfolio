@@ -568,6 +568,7 @@ function initCustomCursor() {
 
         cursor.style.opacity = '1';
         cursor.style.display = 'block';
+        cursor.style.visibility = 'visible';
         cursor.style.pointerEvents = 'none';
         document.body.classList.remove('show-native-cursor');
     });
@@ -614,15 +615,17 @@ function initCustomCursor() {
         cursor.classList.remove('clicking');
     });
 
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', () => {
+    // Keep the cursor visible while the user is interacting with the page.
+    // Some browsers report mouseleave/enter when the page is inactive or re-focused,
+    // which can leave the custom cursor stuck at opacity 0 even though the page is active.
+    window.addEventListener('blur', () => {
         cursor.style.opacity = '0';
-        document.body.classList.remove('show-native-cursor');
     });
 
-    document.addEventListener('mouseenter', () => {
+    window.addEventListener('focus', () => {
         cursor.style.opacity = '1';
-        document.body.classList.remove('show-native-cursor');
+        cursor.style.display = 'block';
+        cursor.style.visibility = 'visible';
     });
 }
 
