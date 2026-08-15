@@ -531,125 +531,219 @@ function initTerminalObserver() {
    ============================================ */
 function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
-    if (!cursor) return;
 
-    cursor.style.opacity = '1';
-    cursor.style.display = 'block';
-    document.body.classList.remove('show-native-cursor');
+    if (!cursor) {
+        console.warn('Custom cursor element not found.');
+        return;
+    }
 
-    // Check if touch device - hide cursor
-    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    // Only show the custom cursor when the device has a real mouse/pointer.
+    const hasMouse = window.matchMedia(
+        '(hover: hover) and (pointer: fine)'
+    ).matches;
+
+    if (!hasMouse) {
         cursor.style.display = 'none';
         return;
     }
 
-    // Cursor position tracking
+    cursor.style.display = 'block';
+    cursor.style.opacity = '0';
+
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let cursorX = mouseX;
     let cursorY = mouseY;
 
-    // Smooth cursor following with ease
     const ease = 0.2;
 
-    // Track mouse position continuously so the ghost behaves like a normal desktop cursor.
-    const updateCursorPosition = (e) => {
-        const viewportWidth = document.documentElement.clientWidth;
-        const viewportHeight = window.innerHeight;
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
 
-        const minX = 14;
-        const maxX = viewportWidth - 24;
-        const minY = 18;
-        const maxY = viewportHeight - 18;
-
-        mouseX = Math.max(minX, Math.min(e.clientX, maxX));
-        mouseY = Math.max(minY, Math.min(e.clientY, maxY));
-
+        // Make cursor visible as soon as the mouse enters the page.
         cursor.style.opacity = '1';
-        cursor.style.display = 'block';
-        cursor.style.visibility = 'visible';
-        cursor.style.pointerEvents = 'none';
-        document.body.classList.remove('show-native-cursor');
-    };
+    });
 
-    document.addEventListener('pointermove', updateCursorPosition);
-    document.addEventListener('mousemove', updateCursorPosition);
-
-    // Animate cursor position
+    // Smooth cursor movement
     function animateCursor() {
-        // Smooth easing interpolation
         cursorX += (mouseX - cursorX) * ease;
         cursorY += (mouseY - cursorY) * ease;
 
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
+        cursor.style.left = `${cursorX}px`;
+        cursor.style.top = `${cursorY}px`;
 
         requestAnimationFrame(animateCursor);
     }
 
-    // Start cursor animation
     animateCursor();
 
-    // Interactive elements that change cursor
+    // Interactive elements
     const interactiveElements = document.querySelectorAll(
         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
-        '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, .card-inner, input, textarea, [role="button"]'
+        '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, ' +
+        '.card-inner, input, textarea, [role="button"]'
     );
 
-    // Add hover effects
-    interactiveElements.forEach(el => {
+    interactiveElements.forEach((el) => {
         el.addEventListener('mouseenter', () => {
             cursor.classList.add('hovering');
-            createAirPuff(cursorX + window.scrollX, cursorY + window.scrollY);
+
+            createAirPuff(
+                cursorX + window.scrollX,
+                cursorY + window.scrollY
+            );
+
             playSound('puff');
         });
+
         el.addEventListener('mouseleave', () => {
             cursor.classList.remove('hovering');
         });
     });
 
-    // Click effects
-    document.addEventListener('pointerdown', (e) => {
+    // Click state
+    document.addEventListener('mousedown', () => {
         cursor.classList.add('clicking');
-        createAirPuff(e.clientX, e.clientY);
-        const ghost = document.createElement('div');
-        ghost.className = 'ghost-print';
-        ghost.innerHTML = `
-            <div class="ghost-body"></div>
-            <div class="ghost-eyes">
-                <div class="ghost-eye left"></div>
-                <div class="ghost-eye right"></div>
-            </div>
-            <div class="ghost-mouth"></div>
-            <div class="ghost-cheeks">
-                <div class="ghost-cheek left"></div>
-                <div class="ghost-cheek right"></div>
-            </div>
-            <div class="ghost-tail"></div>
-        `;
-        ghost.style.left = e.clientX + 'px';
-        ghost.style.top = e.clientY + 'px';
-        document.body.appendChild(ghost);
-        setTimeout(() => ghost.remove(), 700);
     });
 
-    document.addEventListener('pointerup', () => {
+    document.addEventListener('mouseup', () => {
         cursor.classList.remove('clicking');
     });
 
-    // Keep the custom ghost cursor visible at all times on desktop while the page is active.
-    document.addEventListener('pointerleave', () => {
-        cursor.style.opacity = '1';
-        cursor.style.display = 'block';
-        cursor.style.visibility = 'visible';
+    // Hide when mouse leaves the browser window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
     });
 
-    document.addEventListener('pointerenter', () => {
+    // Show again when mouse enters
+    document.addEventListener('mouseenter', () => {
         cursor.style.opacity = '1';
-        cursor.style.display = 'block';
-        cursor.style.visibility = 'visible';
     });
 }
+
+// function initCustomCursor() {
+//     const cursor = document.getElementById('custom-cursor');
+//     if (!cursor) return;
+
+//     cursor.style.opacity = '1';
+//     cursor.style.display = 'block';
+//     document.body.classList.remove('show-native-cursor');
+
+//     // Check if touch device - hide cursor
+//     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+//         cursor.style.display = 'none';
+//         return;
+//     }
+
+//     // Cursor position tracking
+//     let mouseX = window.innerWidth / 2;
+//     let mouseY = window.innerHeight / 2;
+//     let cursorX = mouseX;
+//     let cursorY = mouseY;
+
+//     // Smooth cursor following with ease
+//     const ease = 0.2;
+
+//     // Track mouse position continuously so the ghost behaves like a normal desktop cursor.
+//     const updateCursorPosition = (e) => {
+//         const viewportWidth = document.documentElement.clientWidth;
+//         const viewportHeight = window.innerHeight;
+
+//         const minX = 14;
+//         const maxX = viewportWidth - 24;
+//         const minY = 18;
+//         const maxY = viewportHeight - 18;
+
+//         mouseX = Math.max(minX, Math.min(e.clientX, maxX));
+//         mouseY = Math.max(minY, Math.min(e.clientY, maxY));
+
+//         cursor.style.opacity = '1';
+//         cursor.style.display = 'block';
+//         cursor.style.visibility = 'visible';
+//         cursor.style.pointerEvents = 'none';
+//         document.body.classList.remove('show-native-cursor');
+//     };
+
+//     document.addEventListener('pointermove', updateCursorPosition);
+//     document.addEventListener('mousemove', updateCursorPosition);
+
+//     // Animate cursor position
+//     function animateCursor() {
+//         // Smooth easing interpolation
+//         cursorX += (mouseX - cursorX) * ease;
+//         cursorY += (mouseY - cursorY) * ease;
+
+//         cursor.style.left = cursorX + 'px';
+//         cursor.style.top = cursorY + 'px';
+
+//         requestAnimationFrame(animateCursor);
+//     }
+
+//     // Start cursor animation
+//     animateCursor();
+
+//     // Interactive elements that change cursor
+//     const interactiveElements = document.querySelectorAll(
+//         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
+//         '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, .card-inner, input, textarea, [role="button"]'
+//     );
+
+//     // Add hover effects
+//     interactiveElements.forEach(el => {
+//         el.addEventListener('mouseenter', () => {
+//             cursor.classList.add('hovering');
+//             createAirPuff(cursorX + window.scrollX, cursorY + window.scrollY);
+//             playSound('puff');
+//         });
+//         el.addEventListener('mouseleave', () => {
+//             cursor.classList.remove('hovering');
+//         });
+//     });
+
+//     // Click effects
+//     document.addEventListener('pointerdown', (e) => {
+//         cursor.classList.add('clicking');
+//         createAirPuff(e.clientX, e.clientY);
+//         const ghost = document.createElement('div');
+//         ghost.className = 'ghost-print';
+//         ghost.innerHTML = `
+//             <div class="ghost-body"></div>
+//             <div class="ghost-eyes">
+//                 <div class="ghost-eye left"></div>
+//                 <div class="ghost-eye right"></div>
+//             </div>
+//             <div class="ghost-mouth"></div>
+//             <div class="ghost-cheeks">
+//                 <div class="ghost-cheek left"></div>
+//                 <div class="ghost-cheek right"></div>
+//             </div>
+//             <div class="ghost-tail"></div>
+//         `;
+//         ghost.style.left = e.clientX + 'px';
+//         ghost.style.top = e.clientY + 'px';
+//         document.body.appendChild(ghost);
+//         setTimeout(() => ghost.remove(), 700);
+//     });
+
+//     document.addEventListener('pointerup', () => {
+//         cursor.classList.remove('clicking');
+//     });
+
+//     // Keep the custom ghost cursor visible at all times on desktop while the page is active.
+//     document.addEventListener('pointerleave', () => {
+//         cursor.style.opacity = '1';
+//         cursor.style.display = 'block';
+//         cursor.style.visibility = 'visible';
+//     });
+
+//     document.addEventListener('pointerenter', () => {
+//         cursor.style.opacity = '1';
+//         cursor.style.display = 'block';
+//         cursor.style.visibility = 'visible';
+//     });
+// }
 
 /* ============================================
    GHOST CLICK EFFECT

@@ -658,6 +658,17 @@ img { max-width: 100%; display: block; }
    ============================================ */
 .custom-cursor {
     position: fixed;
+        top: 0;
+        left: 0;
+        width: 28px;
+        height: 36px;
+        pointer-events: none;
+        z-index: 999999;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        display: block;
+        filter: drop-shadow(0 0 8px rgba(179, 136, 255, 0.5)) drop-shadow(0 0 12px rgba(124, 240, 255, 0.3));
+    /* position: fixed;
     top: 0;
     left: 0;
     width: 28px;
@@ -668,7 +679,7 @@ img { max-width: 100%; display: block; }
     opacity: 1 !important;
     visibility: visible !important;
     /* Soft lavender/cyan pastel glow for futuristic theme */
-    filter: drop-shadow(0 0 12px rgba(179, 136, 255, 0.8)) drop-shadow(0 0 18px rgba(124, 240, 255, 0.6));
+    /* filter: drop-shadow(0 0 12px rgba(179, 136, 255, 0.8)) drop-shadow(0 0 18px rgba(124, 240, 255, 0.6)); */ */
 }
 
 
