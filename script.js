@@ -567,6 +567,7 @@ function initCustomCursor() {
         mouseY = Math.max(minY, Math.min(e.clientY, maxY));
 
         cursor.style.opacity = '1';
+        cursor.style.display = 'block';
         cursor.style.pointerEvents = 'none';
         document.body.classList.remove('show-native-cursor');
     });
