@@ -533,23 +533,21 @@ function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
 
     if (!cursor) {
-        console.error('Custom cursor element was not found.');
+        console.error('CUSTOM CURSOR: element not found');
         return;
     }
 
-    // Do not use the custom cursor on touch devices
-    const touchDevice = window.matchMedia(
-        '(hover: none) and (pointer: coarse)'
-    ).matches;
+    console.log('CUSTOM CURSOR: initialized');
 
-    if (touchDevice) {
+    // Desktop / mouse only
+    const pointerFine = window.matchMedia('(pointer: fine)').matches;
+
+    if (!pointerFine) {
         cursor.style.display = 'none';
         return;
     }
 
-
-
-    // Force the cursor to be visible
+    // Force visibility
     cursor.style.display = 'block';
     cursor.style.visibility = 'visible';
     cursor.style.opacity = '1';
@@ -560,45 +558,43 @@ function initCustomCursor() {
     let cursorX = mouseX;
     let cursorY = mouseY;
 
-    const ease = 0.18;
+    const ease = 0.2;
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
         cursor.style.opacity = '1';
+        cursor.style.visibility = 'visible';
     });
 
-    function updateCursor() {
+    function animateCursor() {
         cursorX += (mouseX - cursorX) * ease;
         cursorY += (mouseY - cursorY) * ease;
 
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
 
-        requestAnimationFrame(updateCursor);
+        requestAnimationFrame(animateCursor);
     }
 
-    updateCursor();
+    animateCursor();
 
     // Hover effects
     const interactiveElements = document.querySelectorAll(
-        'a, button, input, textarea, .btn, .nav-link, ' +
-        '.contact-item, .mission-card, .soft-skill-card, ' +
-        '.skill-item, .copy-btn, .gallery-card, .card-inner, ' +
-        '[role="button"]'
+        'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
+        '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, ' +
+        '.card-inner, input, textarea, [role="button"]'
     );
 
-    interactiveElements.forEach(function (element) {
-
-        element.addEventListener('mouseenter', function () {
+    interactiveElements.forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
             cursor.classList.add('hovering');
         });
 
-        element.addEventListener('mouseleave', function () {
+        el.addEventListener('mouseleave', function () {
             cursor.classList.remove('hovering');
         });
-
     });
 
     // Click animation
@@ -610,137 +606,8 @@ function initCustomCursor() {
         cursor.classList.remove('clicking');
     });
 
-    // Hide when mouse leaves the page
-    document.addEventListener('mouseleave', function () {
-        cursor.style.opacity = '0';
-    });
-
-    document.addEventListener('mouseenter', function () {
-        cursor.style.opacity = '1';
-    });
+    console.log('CUSTOM CURSOR: mouse tracking active');
 }
-
-// function initCustomCursor() {
-//     const cursor = document.getElementById('custom-cursor');
-//     if (!cursor) return;
-
-//     cursor.style.opacity = '1';
-//     cursor.style.display = 'block';
-//     document.body.classList.remove('show-native-cursor');
-
-//     // Check if touch device - hide cursor
-//     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
-//         cursor.style.display = 'none';
-//         return;
-//     }
-
-//     // Cursor position tracking
-//     let mouseX = window.innerWidth / 2;
-//     let mouseY = window.innerHeight / 2;
-//     let cursorX = mouseX;
-//     let cursorY = mouseY;
-
-//     // Smooth cursor following with ease
-//     const ease = 0.2;
-
-//     // Track mouse position continuously so the ghost behaves like a normal desktop cursor.
-//     const updateCursorPosition = (e) => {
-//         const viewportWidth = document.documentElement.clientWidth;
-//         const viewportHeight = window.innerHeight;
-
-//         const minX = 14;
-//         const maxX = viewportWidth - 24;
-//         const minY = 18;
-//         const maxY = viewportHeight - 18;
-
-//         mouseX = Math.max(minX, Math.min(e.clientX, maxX));
-//         mouseY = Math.max(minY, Math.min(e.clientY, maxY));
-
-//         cursor.style.opacity = '1';
-//         cursor.style.display = 'block';
-//         cursor.style.visibility = 'visible';
-//         cursor.style.pointerEvents = 'none';
-//         document.body.classList.remove('show-native-cursor');
-//     };
-
-//     document.addEventListener('pointermove', updateCursorPosition);
-//     document.addEventListener('mousemove', updateCursorPosition);
-
-//     // Animate cursor position
-//     function animateCursor() {
-//         // Smooth easing interpolation
-//         cursorX += (mouseX - cursorX) * ease;
-//         cursorY += (mouseY - cursorY) * ease;
-
-//         cursor.style.left = cursorX + 'px';
-//         cursor.style.top = cursorY + 'px';
-
-//         requestAnimationFrame(animateCursor);
-//     }
-
-//     // Start cursor animation
-//     animateCursor();
-
-//     // Interactive elements that change cursor
-//     const interactiveElements = document.querySelectorAll(
-//         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
-//         '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, .card-inner, input, textarea, [role="button"]'
-//     );
-
-//     // Add hover effects
-//     interactiveElements.forEach(el => {
-//         el.addEventListener('mouseenter', () => {
-//             cursor.classList.add('hovering');
-//             createAirPuff(cursorX + window.scrollX, cursorY + window.scrollY);
-//             playSound('puff');
-//         });
-//         el.addEventListener('mouseleave', () => {
-//             cursor.classList.remove('hovering');
-//         });
-//     });
-
-//     // Click effects
-//     document.addEventListener('pointerdown', (e) => {
-//         cursor.classList.add('clicking');
-//         createAirPuff(e.clientX, e.clientY);
-//         const ghost = document.createElement('div');
-//         ghost.className = 'ghost-print';
-//         ghost.innerHTML = `
-//             <div class="ghost-body"></div>
-//             <div class="ghost-eyes">
-//                 <div class="ghost-eye left"></div>
-//                 <div class="ghost-eye right"></div>
-//             </div>
-//             <div class="ghost-mouth"></div>
-//             <div class="ghost-cheeks">
-//                 <div class="ghost-cheek left"></div>
-//                 <div class="ghost-cheek right"></div>
-//             </div>
-//             <div class="ghost-tail"></div>
-//         `;
-//         ghost.style.left = e.clientX + 'px';
-//         ghost.style.top = e.clientY + 'px';
-//         document.body.appendChild(ghost);
-//         setTimeout(() => ghost.remove(), 700);
-//     });
-
-//     document.addEventListener('pointerup', () => {
-//         cursor.classList.remove('clicking');
-//     });
-
-//     // Keep the custom ghost cursor visible at all times on desktop while the page is active.
-//     document.addEventListener('pointerleave', () => {
-//         cursor.style.opacity = '1';
-//         cursor.style.display = 'block';
-//         cursor.style.visibility = 'visible';
-//     });
-
-//     document.addEventListener('pointerenter', () => {
-//         cursor.style.opacity = '1';
-//         cursor.style.display = 'block';
-//         cursor.style.visibility = 'visible';
-//     });
-// }
 
 /* ============================================
    GHOST CLICK EFFECT
