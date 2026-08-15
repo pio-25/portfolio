@@ -961,58 +961,7 @@ img { max-width: 100%; display: block; }
     display: none;
 }
 
-/* Restore Native Cursor Near Scrollbar */
-body.show-native-cursor, 
-body.show-native-cursor * {
-    cursor: auto !important;
-}
-body.show-native-cursor a,
-body.show-native-cursor button,
-body.show-native-cursor .nav-link,
-body.show-native-cursor .btn {
-    cursor: pointer !important;
-}
 
-/* Restore Native Cursor Near Scrollbar Override */
-body:has(#custom-cursor).show-native-cursor, 
-body:has(#custom-cursor).show-native-cursor * {
-    cursor: auto !important;
-}
-body:has(#custom-cursor).show-native-cursor a,
-body:has(#custom-cursor).show-native-cursor button,
-body:has(#custom-cursor).show-native-cursor .nav-link,
-body:has(#custom-cursor).show-native-cursor .btn {
-    cursor: pointer !important;
-}
-
-/* Completely Override All Cursors */
-body.show-native-cursor,
-body.show-native-cursor *,
-body:has(#custom-cursor).show-native-cursor,
-body:has(#custom-cursor).show-native-cursor *,
-body:has(#custom-cursor).show-native-cursor a,
-body:has(#custom-cursor).show-native-cursor button,
-body:has(#custom-cursor).show-native-cursor .btn,
-body:has(#custom-cursor).show-native-cursor .contact-item,
-body:has(#custom-cursor).show-native-cursor .mission-card,
-body:has(#custom-cursor).show-native-cursor .gallery-card,
-body:has(#custom-cursor).show-native-cursor .card-inner,
-body:has(#custom-cursor).show-native-cursor .ctrl-btn,
-body:has(#custom-cursor).show-native-cursor .copy-btn {
-    cursor: auto !important;
-}
-body.show-native-cursor a,
-body.show-native-cursor button,
-body.show-native-cursor .nav-link,
-body.show-native-cursor .btn,
-body:has(#custom-cursor).show-native-cursor a,
-body:has(#custom-cursor).show-native-cursor button,
-body:has(#custom-cursor).show-native-cursor .nav-link,
-body:has(#custom-cursor).show-native-cursor .btn {
-    cursor: pointer !important;
-}
-
-/* Extra force for scrollbar cursor */
 @supports (scrollbar-color: var(--accent-pink) rgba(255, 255, 255, 0.1)) {
     html {
         scrollbar-color: var(--accent-pink) rgba(255, 255, 255, 0.1);

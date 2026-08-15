@@ -533,6 +533,8 @@ function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
     if (!cursor) return;
 
+    document.body.classList.remove('show-native-cursor');
+
     // Check if touch device - hide cursor
     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
         cursor.style.display = 'none';
@@ -562,23 +564,9 @@ function initCustomCursor() {
         mouseX = Math.max(minX, Math.min(e.clientX, maxX));
         mouseY = Math.max(minY, Math.min(e.clientY, maxY));
 
-        // Dynamic Opacity: Fades out near the right edge to prevent visual "popping"
-        const distToRight = viewportWidth - e.clientX;
-        if (distToRight <= 20) {
-            cursor.style.opacity = '0';
-            cursor.style.pointerEvents = 'none';
-            document.body.classList.add('show-native-cursor');
-        } else if (distToRight <= 40) {
-            // Smoothly interpolate opacity between 20px (0) and 40px (1)
-            const opacity = (distToRight - 20) / 20;
-            cursor.style.opacity = opacity.toString();
-            cursor.style.pointerEvents = 'none';
-            document.body.classList.remove('show-native-cursor');
-        } else {
-            cursor.style.opacity = '1';
-            cursor.style.pointerEvents = 'none';
-            document.body.classList.remove('show-native-cursor');
-        }
+        cursor.style.opacity = '1';
+        cursor.style.pointerEvents = 'none';
+        document.body.classList.remove('show-native-cursor');
     });
 
     // Animate cursor position
@@ -626,10 +614,12 @@ function initCustomCursor() {
     // Hide cursor when leaving window
     document.addEventListener('mouseleave', () => {
         cursor.style.opacity = '0';
+        document.body.classList.remove('show-native-cursor');
     });
 
     document.addEventListener('mouseenter', () => {
         cursor.style.opacity = '1';
+        document.body.classList.remove('show-native-cursor');
     });
 }
 
