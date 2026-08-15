@@ -637,8 +637,11 @@ function initCustomCursor() {
         cursor.classList.remove('clicking');
     });
 
+    // Keep the custom ghost cursor visible at all times on desktop while the page is active.
     document.addEventListener('pointerleave', () => {
-        cursor.style.opacity = '0';
+        cursor.style.opacity = '1';
+        cursor.style.display = 'block';
+        cursor.style.visibility = 'visible';
     });
 
     document.addEventListener('pointerenter', () => {
