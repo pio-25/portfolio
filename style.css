@@ -113,7 +113,6 @@ body, #particle-canvas, .custom-cursor, .ghost-print, .puff-particle, .loading-s
   max-width: 100%;
 }
 
-body, body * { cursor: none !important; }
 body a, body button, body .btn, body .contact-item, body .mission-card, body .gallery-card, body .card-inner, body .ctrl-btn, body .copy-btn {
   cursor: pointer !important;
 }
