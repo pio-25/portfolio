@@ -653,9 +653,7 @@ img { max-width: 100%; display: block; }
 .toast-notification i { color: var(--accent-green); }
 .toast-notification span { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
 
-body:has(#custom-cursor) {
-    cursor: none;
-}
+
 /* ============================================
    CUSTOM PIXEL GHOST CURSOR
    ============================================ */
@@ -978,3 +976,40 @@ body:has(#custom-cursor) {
     }
 }
 
+/* FORCE CUSTOM CURSOR */
+#custom-cursor {
+    position: fixed !important;
+    width: 40px !important;
+    height: 48px !important;
+    left: 50vw !important;
+    top: 50vh !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    z-index: 2147483647 !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+#custom-cursor .ghost-body {
+    position: absolute !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 30px !important;
+    height: 36px !important;
+    left: 50% !important;
+    top: 0 !important;
+    transform: translateX(-50%) !important;
+    background: white !important;
+    z-index: 1 !important;
+}
+
+#custom-cursor .ghost-eyes,
+#custom-cursor .ghost-mouth,
+#custom-cursor .ghost-cheeks,
+#custom-cursor .ghost-tail {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
