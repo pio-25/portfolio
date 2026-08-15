@@ -557,10 +557,9 @@ function initCustomCursor() {
         const viewportWidth = document.documentElement.clientWidth;
         const viewportHeight = window.innerHeight;
 
-        // Boundary Clamping: Ensures the ghost stays fully on screen
-        const minX = 14; // half of 28px width
-        const maxX = viewportWidth - 24; // Keep center 24px from right edge/scrollbar
-        const minY = 18; // half of 36px height
+        const minX = 14;
+        const maxX = viewportWidth - 24;
+        const minY = 18;
         const maxY = viewportHeight - 18;
 
         mouseX = Math.max(minX, Math.min(e.clientX, maxX));
@@ -610,8 +609,28 @@ function initCustomCursor() {
     });
 
     // Click effects
-    document.addEventListener('pointerdown', () => {
+    document.addEventListener('pointerdown', (e) => {
         cursor.classList.add('clicking');
+        createAirPuff(e.clientX, e.clientY);
+        const ghost = document.createElement('div');
+        ghost.className = 'ghost-print';
+        ghost.innerHTML = `
+            <div class="ghost-body"></div>
+            <div class="ghost-eyes">
+                <div class="ghost-eye left"></div>
+                <div class="ghost-eye right"></div>
+            </div>
+            <div class="ghost-mouth"></div>
+            <div class="ghost-cheeks">
+                <div class="ghost-cheek left"></div>
+                <div class="ghost-cheek right"></div>
+            </div>
+            <div class="ghost-tail"></div>
+        `;
+        ghost.style.left = e.clientX + 'px';
+        ghost.style.top = e.clientY + 'px';
+        document.body.appendChild(ghost);
+        setTimeout(() => ghost.remove(), 700);
     });
 
     document.addEventListener('pointerup', () => {
@@ -655,13 +674,9 @@ function initGhostClickEffect() {
         ghost.style.left = e.pageX + 'px';
         ghost.style.top = e.pageY + 'px';
 
-        // Trigger air puff at click position together with ghost print
         createAirPuff(e.pageX, e.pageY);
-
-        // Append to body and ensure it's on top of everything
         document.body.appendChild(ghost);
 
-        // Remove from DOM after animation finishes (1000ms to be safe)
         setTimeout(() => {
             ghost.remove();
         }, 1000);
