@@ -539,13 +539,25 @@ function initCustomCursor() {
 
     console.log('CUSTOM CURSOR FOUND');
 
-    cursor.style.display = 'block';
-    cursor.style.visibility = 'visible';
-    cursor.style.opacity = '1';
+    cursor.style.setProperty('display', 'block', 'important');
+    cursor.style.setProperty('visibility', 'visible', 'important');
+    cursor.style.setProperty('opacity', '1', 'important');
+    cursor.style.setProperty('pointer-events', 'none', 'important');
 
     document.addEventListener('mousemove', function (e) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+
+        cursor.style.setProperty(
+            'left',
+            e.clientX + 'px',
+            'important'
+        );
+
+        cursor.style.setProperty(
+            'top',
+            e.clientY + 'px',
+            'important'
+        );
+
     });
 
     const interactiveElements = document.querySelectorAll(
@@ -555,6 +567,7 @@ function initCustomCursor() {
     );
 
     interactiveElements.forEach(function (el) {
+
         el.addEventListener('mouseenter', function () {
             cursor.classList.add('hovering');
         });
@@ -562,6 +575,7 @@ function initCustomCursor() {
         el.addEventListener('mouseleave', function () {
             cursor.classList.remove('hovering');
         });
+
     });
 
     document.addEventListener('mousedown', function () {
@@ -571,6 +585,8 @@ function initCustomCursor() {
     document.addEventListener('mouseup', function () {
         cursor.classList.remove('clicking');
     });
+
+    console.log('CUSTOM CURSOR MOUSE TRACKING ACTIVE');
 }
 
 /* ============================================
