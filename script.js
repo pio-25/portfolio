@@ -539,15 +539,6 @@ function initCustomCursor() {
 
     console.log('CUSTOM CURSOR: initialized');
 
-    // Desktop / mouse only
-    const pointerFine = window.matchMedia('(pointer: fine)').matches;
-
-    if (!pointerFine) {
-        cursor.style.display = 'none';
-        return;
-    }
-
-    // Force visibility
     cursor.style.display = 'block';
     cursor.style.visibility = 'visible';
     cursor.style.opacity = '1';
@@ -580,7 +571,8 @@ function initCustomCursor() {
 
     animateCursor();
 
-    // Hover effects
+    console.log('CUSTOM CURSOR: mouse tracking active');
+
     const interactiveElements = document.querySelectorAll(
         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
         '.soft-skill-card, .skill-item, .copy-btn, .gallery-card, ' +
@@ -597,7 +589,6 @@ function initCustomCursor() {
         });
     });
 
-    // Click animation
     document.addEventListener('mousedown', function () {
         cursor.classList.add('clicking');
     });
@@ -605,8 +596,6 @@ function initCustomCursor() {
     document.addEventListener('mouseup', function () {
         cursor.classList.remove('clicking');
     });
-
-    console.log('CUSTOM CURSOR: mouse tracking active');
 }
 
 /* ============================================

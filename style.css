@@ -653,6 +653,9 @@ img { max-width: 100%; display: block; }
 .toast-notification i { color: var(--accent-green); }
 .toast-notification span { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
 
+body:has(#custom-cursor) {
+    cursor: none;
+}
 /* ============================================
    CUSTOM PIXEL GHOST CURSOR
    ============================================ */
