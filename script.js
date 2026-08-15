@@ -552,8 +552,8 @@ function initCustomCursor() {
     // Smooth cursor following with ease
     const ease = 0.2;
 
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
+    // Track mouse position continuously so the ghost behaves like a normal desktop cursor.
+    const updateCursorPosition = (e) => {
         const viewportWidth = document.documentElement.clientWidth;
         const viewportHeight = window.innerHeight;
 
@@ -571,7 +571,10 @@ function initCustomCursor() {
         cursor.style.visibility = 'visible';
         cursor.style.pointerEvents = 'none';
         document.body.classList.remove('show-native-cursor');
-    });
+    };
+
+    document.addEventListener('pointermove', updateCursorPosition);
+    document.addEventListener('mousemove', updateCursorPosition);
 
     // Animate cursor position
     function animateCursor() {
@@ -607,22 +610,19 @@ function initCustomCursor() {
     });
 
     // Click effects
-    document.addEventListener('mousedown', () => {
+    document.addEventListener('pointerdown', () => {
         cursor.classList.add('clicking');
     });
 
-    document.addEventListener('mouseup', () => {
+    document.addEventListener('pointerup', () => {
         cursor.classList.remove('clicking');
     });
 
-    // Keep the cursor visible while the user is interacting with the page.
-    // Some browsers report mouseleave/enter when the page is inactive or re-focused,
-    // which can leave the custom cursor stuck at opacity 0 even though the page is active.
-    window.addEventListener('blur', () => {
+    document.addEventListener('pointerleave', () => {
         cursor.style.opacity = '0';
     });
 
-    window.addEventListener('focus', () => {
+    document.addEventListener('pointerenter', () => {
         cursor.style.opacity = '1';
         cursor.style.display = 'block';
         cursor.style.visibility = 'visible';
@@ -697,19 +697,21 @@ function createAirPuff(x, y) {
    ============================================ */
 function initSoundEffects() {
     // Synthesis Mode: No file preloading needed.
-    // We initialize/resume the AudioContext on the first real user gesture
-    // to comply with browser autoplay policies and prevent console warnings.
+    // We initialize/resume the AudioContext only after a genuine user gesture.
+    // This prevents Chrome's autoplay warning and keeps hover/click effects silent until interaction starts.
     const unlockAudio = () => {
         if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const AudioCtor = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtor) return;
+            audioCtx = new AudioCtor();
         }
         if (audioCtx.state === 'suspended') {
             audioCtx.resume();
         }
     };
 
-    // These events are recognized as valid user gestures by all major browsers
-    ['mousedown', 'keydown', 'touchstart'].forEach(type => {
+    // These events are recognized as valid user gestures by all major browsers.
+    ['pointerdown', 'mousedown', 'keydown', 'touchstart'].forEach(type => {
         window.addEventListener(type, unlockAudio, { once: true });
     });
 }
