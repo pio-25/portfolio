@@ -679,7 +679,7 @@ img { max-width: 100%; display: block; }
     opacity: 1 !important;
     visibility: visible !important;
     /* Soft lavender/cyan pastel glow for futuristic theme */
-    /* filter: drop-shadow(0 0 12px rgba(179, 136, 255, 0.8)) drop-shadow(0 0 18px rgba(124, 240, 255, 0.6)); */ */
+    /* filter: drop-shadow(0 0 12px rgba(179, 136, 255, 0.8)) drop-shadow(0 0 18px rgba(124, 240, 255, 0.6)); */ 
 }
 
 
