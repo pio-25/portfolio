@@ -533,45 +533,20 @@ function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
 
     if (!cursor) {
-        console.error('CUSTOM CURSOR: element not found');
+        console.error('CUSTOM CURSOR NOT FOUND');
         return;
     }
 
-    console.log('CUSTOM CURSOR: initialized');
+    console.log('CUSTOM CURSOR FOUND');
 
     cursor.style.display = 'block';
     cursor.style.visibility = 'visible';
     cursor.style.opacity = '1';
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-
-    let cursorX = mouseX;
-    let cursorY = mouseY;
-
-    const ease = 0.2;
-
     document.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        cursor.style.opacity = '1';
-        cursor.style.visibility = 'visible';
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
-
-    function animateCursor() {
-        cursorX += (mouseX - cursorX) * ease;
-        cursorY += (mouseY - cursorY) * ease;
-
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-
-    animateCursor();
-
-    console.log('CUSTOM CURSOR: mouse tracking active');
 
     const interactiveElements = document.querySelectorAll(
         'a, button, .nav-link, .btn, .contact-item, .mission-card, ' +
