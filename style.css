@@ -113,18 +113,6 @@ body, #particle-canvas, .custom-cursor, .ghost-print, .puff-particle, .loading-s
   max-width: 100%;
 }
 
-body:has(#custom-cursor) { cursor: none; }
-body:has(#custom-cursor) a, 
-body:has(#custom-cursor) button, 
-body:has(#custom-cursor) .btn,
-body:has(#custom-cursor) .contact-item,
-body:has(#custom-cursor) .mission-card,
-body:has(#custom-cursor) .gallery-card,
-body:has(#custom-cursor) .card-inner,
-body:has(#custom-cursor) .ctrl-btn,
-body:has(#custom-cursor) .copy-btn { 
-  cursor: none !important; 
-}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }

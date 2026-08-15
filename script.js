@@ -533,6 +533,8 @@ function initCustomCursor() {
     const cursor = document.getElementById('custom-cursor');
     if (!cursor) return;
 
+    cursor.style.opacity = '1';
+    cursor.style.display = 'block';
     document.body.classList.remove('show-native-cursor');
 
     // Check if touch device - hide cursor
