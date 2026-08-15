@@ -986,3 +986,10 @@ img { max-width: 100%; display: block; }
 }
 
 
+
+/* Hide the normal mouse cursor when custom ghost cursor is active */
+html,
+html *,
+body {
+    cursor: none !important;
+}
